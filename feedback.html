@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub | Feedback</title>
+</head>
+<body>
+
+  <header>
+    <h1>StudentHub</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="feedback-heading">
+      <h2 id="feedback-heading">Share Your Feedback</h2>
+      <form>
+        <div>
+          <label for="feedback-rating">Overall Rating</label><br>
+          <select id="feedback-rating" name="rating">
+            <option value="5">Excellent</option>
+            <option value="4">Good</option>
+            <option value="3">Average</option>
+            <option value="2">Poor</option>
+          </select>
+        </div>
+        <div>
+          <label for="feedback-comments">Comments</label><br>
+          <textarea id="feedback-comments" name="comments" rows="4"></textarea>
+        </div>
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

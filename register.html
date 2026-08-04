@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudentHub | Register</title>
+</head>
+<body>
+
+  <header>
+    <h1>StudentHub</h1>
+   <nav aria-label="Main navigation">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="register-heading">
+      <h2 id="register-heading">Create Your StudentHub Account</h2>
+      <form>
+        <div>
+          <label for="fullname">Full Name</label><br>
+          <input type="text" id="fullname" name="fullname" required>
+        </div>
+        <div>
+          <label for="reg-email">Email address</label><br>
+          <input type="email" id="reg-email" name="email" required>
+        </div>
+        <div>
+          <label for="reg-password">Password</label><br>
+          <input type="password" id="reg-password" name="password" required>
+        </div>
+        <div>
+          <label for="role">I am a</label><br>
+          <select id="role" name="role">
+            <option value="student">Student</option>
+            <option value="faculty">Faculty</option>
+          </select>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login here</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
