@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StudentHub | Events</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -11,9 +12,9 @@
     <h1>StudentHub</h1>
     <nav aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="index.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="events.html">Events</a></li>
@@ -25,20 +26,22 @@
   </header>
 
   <main>
-    <section aria-labelledby="events-heading">
-      <h2 id="events-heading">Upcoming Events</h2>
+  <section aria-labelledby="events-heading">
+    <h2 id="events-heading">Upcoming Events</h2>
 
-      <article aria-labelledby="event1-heading">
+    <div class="events-grid">
+      <article aria-labelledby="event1-heading" class="event-card">
         <h3 id="event1-heading">Tech Fest 2026</h3>
         <p>Date: 15th September 2026 | Venue: Main Auditorium</p>
       </article>
 
-      <article aria-labelledby="event2-heading">
+      <article aria-labelledby="event2-heading" class="event-card">
         <h3 id="event2-heading">Coding Hackathon</h3>
         <p>Date: 22nd September 2026 | Venue: Computer Lab</p>
       </article>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
   <footer>
     <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>

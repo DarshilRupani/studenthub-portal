@@ -246,3 +246,29 @@ footer {
     grid-template-columns: 220px 1fr;
   }
 }
+/* ===== Events Grid ===== */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.event-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-left: 4px solid #2563eb;
+}
+
+.event-card h3 {
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
