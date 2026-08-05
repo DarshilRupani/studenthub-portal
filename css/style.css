@@ -130,3 +130,23 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* ===== About Page Layout ===== */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.about-layout article,
+.about-layout section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .about-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
