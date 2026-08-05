@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>StudentHub | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -11,9 +12,9 @@
     <h1>StudentHub</h1>
     <nav aria-label="Main navigation">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="index.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="events.html">Events</a></li>
@@ -25,9 +26,10 @@
   </header>
 
   <main>
-    <h2>Student Dashboard</h2>
+  <h2>Student Dashboard</h2>
 
-    <nav aria-label="Dashboard sections">
+  <div class="dashboard-layout">
+    <nav class="dashboard-sidebar" aria-label="Dashboard sections">
       <ul>
         <li><a href="#notices">Notice Board</a></li>
         <li><a href="#timetable">Timetable</a></li>
@@ -35,24 +37,27 @@
       </ul>
     </nav>
 
-    <section id="notices" aria-labelledby="notices-heading">
-      <h3 id="notices-heading">Recent Notices</h3>
-      <ul>
-        <li>Semester exam schedule released</li>
-        <li>Library timings updated</li>
-      </ul>
-    </section>
+    <div class="dashboard-content">
+      <section id="notices" aria-labelledby="notices-heading">
+        <h3 id="notices-heading">Recent Notices</h3>
+        <ul>
+          <li>Semester exam schedule released</li>
+          <li>Library timings updated</li>
+        </ul>
+      </section>
 
-    <section id="timetable" aria-labelledby="timetable-heading">
-      <h3 id="timetable-heading">Today's Timetable</h3>
-      <p>9:00 AM - Web Development | 11:00 AM - Data Structures</p>
-    </section>
+      <section id="timetable" aria-labelledby="timetable-heading">
+        <h3 id="timetable-heading">Today's Timetable</h3>
+        <p>9:00 AM - Web Development | 11:00 AM - Data Structures</p>
+      </section>
 
-    <section id="materials" aria-labelledby="materials-heading">
-      <h3 id="materials-heading">Study Materials</h3>
-      <p>Latest uploads available in your subject folders.</p>
-    </section>
-  </main>
+      <section id="materials" aria-labelledby="materials-heading">
+        <h3 id="materials-heading">Study Materials</h3>
+        <p>Latest uploads available in your subject folders.</p>
+      </section>
+    </div>
+  </div>
+</main>
 
   <footer>
     <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>

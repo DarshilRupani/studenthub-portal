@@ -200,3 +200,49 @@ footer {
 .stacked-form button:hover {
   background-color: #334155;
 }
+/* ===== Dashboard Layout (Sidebar + Content Grid) ===== */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.dashboard-sidebar {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-sidebar a {
+  color: #cbd5e1;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.dashboard-sidebar a:hover {
+  background: #334155;
+  color: white;
+}
+
+.dashboard-content section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .dashboard-layout {
+    grid-template-columns: 220px 1fr;
+  }
+}
