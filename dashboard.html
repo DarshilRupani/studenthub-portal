@@ -1,67 +1,365 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub | Dashboard</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>StudentHub | Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+```
+
 </head>
+
 <body>
 
-  <header>
+```
+<!-- ================= HEADER ================= -->
+
+<header>
+
     <h1>StudentHub</h1>
+
     <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-  <h2>Student Dashboard</h2>
-
-  <div class="dashboard-layout">
-    <nav class="dashboard-sidebar" aria-label="Dashboard sections">
-      <ul>
-        <li><a href="#notices">Notice Board</a></li>
-        <li><a href="#timetable">Timetable</a></li>
-        <li><a href="#materials">Study Materials</a></li>
-      </ul>
-    </nav>
-
-    <div class="dashboard-content">
-      <section id="notices" aria-labelledby="notices-heading">
-        <h3 id="notices-heading">Recent Notices</h3>
         <ul>
-          <li>Semester exam schedule released</li>
-          <li>Library timings updated</li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
         </ul>
-      </section>
+    </nav>
 
-      <section id="timetable" aria-labelledby="timetable-heading">
-        <h3 id="timetable-heading">Today's Timetable</h3>
-        <p>9:00 AM - Web Development | 11:00 AM - Data Structures</p>
-      </section>
+</header>
 
-      <section id="materials" aria-labelledby="materials-heading">
-        <h3 id="materials-heading">Study Materials</h3>
-        <p>Latest uploads available in your subject folders.</p>
-      </section>
+
+<!-- ================= MAIN ================= -->
+
+<main class="dashboard-main">
+
+    <!-- Dashboard Welcome -->
+
+    <section class="dashboard-welcome">
+
+        <div>
+            <span class="dashboard-label">
+                STUDENT DASHBOARD
+            </span>
+
+            <h2>
+                Welcome back!
+            </h2>
+
+            <p>
+                Find your latest notices, today's timetable and
+                study resources in one place.
+            </p>
+        </div>
+
+        <div class="dashboard-mark">
+            SH
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD LAYOUT ================= -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <nav class="dashboard-sidebar"
+             aria-label="Dashboard sections">
+
+            <div class="sidebar-title">
+                <span>QUICK ACCESS</span>
+                <h3>Dashboard</h3>
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="#notices" class="sidebar-active">
+                        <span class="sidebar-icon">📢</span>
+                        <span>Notice Board</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#timetable">
+                        <span class="sidebar-icon">📅</span>
+                        <span>Timetable</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#materials">
+                        <span class="sidebar-icon">📚</span>
+                        <span>Study Materials</span>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <div class="dashboard-content">
+
+
+            <!-- ================= NOTICES ================= -->
+
+            <section id="notices"
+                     class="dashboard-panel"
+                     aria-labelledby="notices-heading">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="panel-label">
+                            IMPORTANT
+                        </span>
+
+                        <h3 id="notices-heading">
+                            Recent Notices
+                        </h3>
+                    </div>
+
+                    <span class="panel-icon">📢</span>
+
+                </div>
+
+
+                <div class="notice-list">
+
+                    <article class="notice-item">
+
+                        <div class="notice-dot"></div>
+
+                        <div>
+                            <h4>
+                                Semester exam schedule released
+                            </h4>
+
+                            <p>
+                                The latest examination schedule has
+                                been released by the administration.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="notice-item">
+
+                        <div class="notice-dot"></div>
+
+                        <div>
+                            <h4>
+                                Library timings updated
+                            </h4>
+
+                            <p>
+                                Updated library timings are now
+                                available for students.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <article class="notice-item">
+
+                        <div class="notice-dot"></div>
+
+                        <div>
+                            <h4>
+                                Internal assessment notice
+                            </h4>
+
+                            <p>
+                                Students are requested to check the
+                                latest internal assessment details.
+                            </p>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= TIMETABLE ================= -->
+
+            <section id="timetable"
+                     class="dashboard-panel"
+                     aria-labelledby="timetable-heading">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="panel-label">
+                            TODAY
+                        </span>
+
+                        <h3 id="timetable-heading">
+                            Today's Timetable
+                        </h3>
+                    </div>
+
+                    <span class="panel-icon">📅</span>
+
+                </div>
+
+
+                <div class="schedule-list">
+
+
+                    <div class="schedule-item">
+
+                        <div class="schedule-time">
+                            09:00
+                            <span>AM</span>
+                        </div>
+
+                        <div class="schedule-line"></div>
+
+                        <div class="schedule-info">
+                            <h4>Web Development</h4>
+                            <p>Morning lecture</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <div class="schedule-time">
+                            11:00
+                            <span>AM</span>
+                        </div>
+
+                        <div class="schedule-line"></div>
+
+                        <div class="schedule-info">
+                            <h4>Data Structures</h4>
+                            <p>Morning lecture</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <div class="schedule-time">
+                            02:00
+                            <span>PM</span>
+                        </div>
+
+                        <div class="schedule-line"></div>
+
+                        <div class="schedule-info">
+                            <h4>Computer Networks</h4>
+                            <p>Afternoon lecture</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= STUDY MATERIALS ================= -->
+
+            <section id="materials"
+                     class="dashboard-panel"
+                     aria-labelledby="materials-heading">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <span class="panel-label">
+                            LEARNING RESOURCES
+                        </span>
+
+                        <h3 id="materials-heading">
+                            Study Materials
+                        </h3>
+                    </div>
+
+                    <span class="panel-icon">📚</span>
+
+                </div>
+
+
+                <div class="materials-box">
+
+                    <div class="materials-icon">
+                        📖
+                    </div>
+
+                    <div>
+                        <h4>
+                            Subject resources
+                        </h4>
+
+                        <p>
+                            Access notes, study resources and other
+                            academic material uploaded for your subjects.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
     </div>
-  </div>
+
 </main>
 
-  <footer>
-    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
-  </footer>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>StudentHub</h3>
+
+            <p>
+                Your digital campus companion.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                &copy; 2026 StudentHub Portal.
+                All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+```
 
 </body>
+
 </html>

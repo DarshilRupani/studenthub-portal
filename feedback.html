@@ -1,56 +1,233 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub | Feedback</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>StudentHub | Feedback</title>
+
+<link rel="stylesheet" href="css/style.css">
+```
+
 </head>
+
 <body>
 
-  <header>
+```
+<!-- ================= HEADER ================= -->
+
+<header>
+
     <h1>StudentHub</h1>
+
     <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-      </ul>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html" class="active">Feedback</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
-    <section aria-labelledby="feedback-heading">
-      <h2 id="feedback-heading">Share Your Feedback</h2>
-      <form>
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="feedback-main">
+
+    <!-- INTRO -->
+
+    <section class="feedback-intro">
+
         <div>
-          <label for="feedback-rating">Overall Rating</label><br>
-          <select id="feedback-rating" name="rating">
-            <option value="5">Excellent</option>
-            <option value="4">Good</option>
-            <option value="3">Average</option>
-            <option value="2">Poor</option>
-          </select>
+
+            <span class="feedback-label">
+                STUDENT VOICE
+            </span>
+
+            <h2>
+                Help us make
+                <span>StudentHub better.</span>
+            </h2>
+
+            <p>
+                Your feedback helps us understand what works,
+                what can be improved, and what students need.
+            </p>
+
         </div>
-        <div>
-          <label for="feedback-comments">Comments</label><br>
-          <textarea id="feedback-comments" name="comments" rows="4"></textarea>
+
+        <div class="feedback-mark">
+            ✦
         </div>
-        <button type="submit">Submit Feedback</button>
-      </form>
+
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
-  </footer>
+
+    <!-- FEEDBACK LAYOUT -->
+
+    <div class="feedback-layout">
+
+
+        <!-- FORM -->
+
+        <section class="feedback-card">
+
+            <div class="feedback-card-heading">
+
+                <div>
+                    <span>YOUR EXPERIENCE</span>
+
+                    <h3>Share your feedback</h3>
+                </div>
+
+                <span class="feedback-icon">💬</span>
+
+            </div>
+
+
+            <form class="feedback-form">
+
+                <!-- Rating -->
+
+                <div class="rating-section">
+
+                    <label for="feedback-rating">
+                        How would you rate StudentHub?
+                    </label>
+
+                    <select
+                        id="feedback-rating"
+                        name="rating"
+                        required
+                    >
+                        <option value="">Select a rating</option>
+                        <option value="5">Excellent</option>
+                        <option value="4">Good</option>
+                        <option value="3">Average</option>
+                        <option value="2">Poor</option>
+                    </select>
+
+                </div>
+
+
+                <!-- Comments -->
+
+                <div>
+
+                    <label for="feedback-comments">
+                        Your comments
+                    </label>
+
+                    <textarea
+                        id="feedback-comments"
+                        name="comments"
+                        rows="6"
+                        placeholder="Tell us what you think about StudentHub..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="feedback-submit">
+                    Submit Feedback →
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- SIDE INFORMATION -->
+
+        <aside class="feedback-side">
+
+            <div class="feedback-side-icon">
+                ✓
+            </div>
+
+            <span>WHY IT MATTERS</span>
+
+            <h3>
+                Your opinion
+                <strong>counts.</strong>
+            </h3>
+
+            <p>
+                StudentHub is designed around student needs.
+                A few words from you can help improve the
+                experience for everyone.
+            </p>
+
+
+            <div class="feedback-note">
+
+                <span>QUICK TIP</span>
+
+                <p>
+                    Mention a feature you liked or something
+                    that could make StudentHub easier to use.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- BOTTOM MESSAGE -->
+
+    <section class="feedback-bottom">
+
+        <span>STUDENTHUB COMMUNITY</span>
+
+        <h3>
+            Better ideas start with
+            <strong>student feedback.</strong>
+        </h3>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>StudentHub</h3>
+
+            <p>
+                Your digital campus companion.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                &copy; 2026 StudentHub Portal.
+                All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+```
 
 </body>
+
 </html>

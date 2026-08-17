@@ -1,55 +1,283 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub | Profile</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>StudentHub | Profile</title>
+
+<link rel="stylesheet" href="css/style.css">
+```
+
 </head>
+
 <body>
 
-  <header>
+```
+<!-- ================= HEADER ================= -->
+
+<header>
+
     <h1>StudentHub</h1>
+
     <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-       <li><a href="feedback.html">Feedback</a></li>
-      </ul>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
     </nav>
-  </header>
 
-  <main>
-    <section aria-labelledby="profile-heading">
-      <h2 id="profile-heading">My Profile</h2>
-      <img src="images/avatar-placeholder.png" alt="Student profile picture" width="100">
+</header>
 
-      <dl>
-        <dt>Name</dt>
-        <dd>Darshil Rupani</dd>
-        <dt>Role</dt>
-        <dd>Student</dd>
-        <dt>Email</dt>
-        <dd>darshil@example.com</dd>
-      </dl>
 
-      <form>
-        <label for="edit-name">Update Name</label><br>
-        <input type="text" id="edit-name" name="edit-name"><br>
-        <button type="submit">Save Changes</button>
-      </form>
+<!-- ================= MAIN ================= -->
+
+<main class="profile-main">
+
+    <!-- Profile Heading -->
+
+    <section class="profile-heading">
+
+        <div>
+            <span class="profile-label">STUDENT ACCOUNT</span>
+
+            <h2>
+                My <span>Profile</span>
+            </h2>
+
+            <p>
+                View and manage your basic student information.
+            </p>
+        </div>
+
     </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
-  </footer>
+
+    <!-- Profile Layout -->
+
+    <div class="profile-layout">
+
+
+        <!-- ================= PROFILE CARD ================= -->
+
+        <section class="profile-card">
+
+            <div class="profile-top">
+
+                <img
+                    src="images/avatar-placeholder.png"
+                    alt="Student profile picture"
+                    class="profile-avatar"
+                >
+
+                <div>
+
+                    <h3>Darshil Rupani</h3>
+
+                    <p class="profile-role">
+                        Computer Engineering Student
+                    </p>
+
+                    <span class="profile-status">
+                        ● Active Student
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-divider"></div>
+
+
+            <div class="profile-details">
+
+                <div>
+                    <span>EMAIL</span>
+                    <strong>darshil@example.com</strong>
+                </div>
+
+                <div>
+                    <span>ROLE</span>
+                    <strong>Student</strong>
+                </div>
+
+                <div>
+                    <span>DEPARTMENT</span>
+                    <strong>Computer Engineering</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACADEMIC INFO ================= -->
+
+        <section class="profile-card academic-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <span>ACADEMIC INFORMATION</span>
+
+                    <h3>Student Details</h3>
+                </div>
+
+                <span class="card-symbol">🎓</span>
+
+            </div>
+
+
+            <div class="academic-info">
+
+                <div class="info-box">
+                    <span>PROGRAM</span>
+                    <strong>B.Tech / Computer Engineering</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>SEMESTER</span>
+                    <strong>Semester 5</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>STUDENT ID</span>
+                    <strong>SH2026-001</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>STATUS</span>
+                    <strong>Currently Enrolled</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- ================= EDIT PROFILE ================= -->
+
+    <section class="edit-profile-card">
+
+        <div class="edit-heading">
+
+            <div>
+                <span>PROFILE SETTINGS</span>
+
+                <h3>Update Information</h3>
+            </div>
+
+            <span class="edit-symbol">✎</span>
+
+        </div>
+
+
+        <form class="profile-form">
+
+            <div class="form-row">
+
+                <div>
+                    <label for="edit-name">Full Name</label>
+                    <input
+                        type="text"
+                        id="edit-name"
+                        name="edit-name"
+                        value="Darshil Rupani"
+                    >
+                </div>
+
+                <div>
+                    <label for="edit-email">Email Address</label>
+                    <input
+                        type="email"
+                        id="edit-email"
+                        name="edit-email"
+                        value="darshil@example.com"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div>
+                    <label for="edit-course">Course</label>
+
+                    <input
+                        type="text"
+                        id="edit-course"
+                        name="edit-course"
+                        value="Computer Engineering"
+                    >
+                </div>
+
+                <div>
+                    <label for="edit-semester">Semester</label>
+
+                    <input
+                        type="text"
+                        id="edit-semester"
+                        name="edit-semester"
+                        value="Semester 5"
+                    >
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="profile-save">
+                Save Changes
+            </button>
+
+        </form>
+
+    </section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>StudentHub</h3>
+
+            <p>
+                Your digital campus companion.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                &copy; 2026 StudentHub Portal.
+                All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+```
 
 </body>
+
 </html>

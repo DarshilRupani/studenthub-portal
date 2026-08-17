@@ -1,51 +1,226 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub | Events</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>StudentHub | Events</title>
+
+<link rel="stylesheet" href="css/style.css">
+```
+
 </head>
+
 <body>
 
-  <header>
+```
+<!-- ================= HEADER ================= -->
+
+<header>
     <h1>StudentHub</h1>
+
     <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-       <li><a href="feedback.html">Feedback</a></li>
-      </ul>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
     </nav>
-  </header>
+</header>
 
-  <main>
-  <section aria-labelledby="events-heading">
-    <h2 id="events-heading">Upcoming Events</h2>
 
-    <div class="events-grid">
-      <article aria-labelledby="event1-heading" class="event-card">
-        <h3 id="event1-heading">Tech Fest 2026</h3>
-        <p>Date: 15th September 2026 | Venue: Main Auditorium</p>
-      </article>
+<!-- ================= MAIN ================= -->
 
-      <article aria-labelledby="event2-heading" class="event-card">
-        <h3 id="event2-heading">Coding Hackathon</h3>
-        <p>Date: 22nd September 2026 | Venue: Computer Lab</p>
-      </article>
-    </div>
-  </section>
+<main class="events-main">
+
+    <!-- Events Introduction -->
+
+    <section class="events-intro">
+
+        <div>
+
+            <span class="events-label">
+                CAMPUS ACTIVITIES
+            </span>
+
+            <h2>
+                What's happening<br>
+                <span>on campus?</span>
+            </h2>
+
+            <p>
+                Explore upcoming academic, technical and student
+                activities happening around the campus.
+            </p>
+
+        </div>
+
+        <div class="events-mark">
+            2026
+        </div>
+
+    </section>
+
+
+    <!-- Events -->
+
+    <section class="events-section" aria-labelledby="events-heading">
+
+        <div class="events-heading">
+
+            <div>
+                <span>UPCOMING</span>
+                <h3 id="events-heading">Campus Events</h3>
+            </div>
+
+            <p>
+                Keep an eye on what's coming next.
+            </p>
+
+        </div>
+
+
+        <div class="events-grid">
+
+            <!-- Event 1 -->
+
+            <article class="event-card">
+
+                <div class="event-date">
+
+                    <strong>15</strong>
+
+                    <span>SEP</span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-type">
+                        TECHNICAL
+                    </span>
+
+                    <h3>
+                        Tech Fest 2026
+                    </h3>
+
+                    <p>
+                        A campus event featuring technical activities,
+                        student projects and technology-based competitions.
+                    </p>
+
+                    <div class="event-meta">
+                        <span>📍 Main Auditorium</span>
+                    </div>
+
+                </div>
+
+                <div class="event-number">
+                    01
+                </div>
+
+            </article>
+
+
+            <!-- Event 2 -->
+
+            <article class="event-card">
+
+                <div class="event-date">
+
+                    <strong>22</strong>
+
+                    <span>SEP</span>
+
+                </div>
+
+                <div class="event-content">
+
+                    <span class="event-type">
+                        COMPETITION
+                    </span>
+
+                    <h3>
+                        Coding Hackathon
+                    </h3>
+
+                    <p>
+                        Put your programming skills to the test and
+                        work with other students to build creative solutions.
+                    </p>
+
+                    <div class="event-meta">
+                        <span>📍 Computer Lab</span>
+                    </div>
+
+                </div>
+
+                <div class="event-number">
+                    02
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- Small CTA -->
+
+    <section class="events-note">
+
+        <div class="events-note-icon">
+            +
+        </div>
+
+        <div>
+            <span>STAY UPDATED</span>
+
+            <h3>
+                Don't miss the next campus activity.
+            </h3>
+        </div>
+
+    </section>
+
 </main>
 
-  <footer>
-    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
-  </footer>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>StudentHub</h3>
+
+            <p>
+                Your digital campus companion.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                &copy; 2026 StudentHub Portal.
+                All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+```
 
 </body>
 </html>

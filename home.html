@@ -1,55 +1,330 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <link rel="stylesheet" href="css/style.css">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudentHub | Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>StudentHub | Home</title>
+
+<link rel="stylesheet" href="css/style.css">
+```
+
 </head>
+
 <body>
 
-  <header>
+```
+<!-- ================= HEADER ================= -->
+
+<header>
     <h1>StudentHub</h1>
+
     <nav aria-label="Main navigation">
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="index.html">Login</a></li>
-    <li><a href="register.html">Register</a></li>
-    <li><a href="dashboard.html">Dashboard</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="profile.html">Profile</a></li>
-    <li><a href="faq.html">FAQ</a></li>
-<li><a href="feedback.html">Feedback</a></li>
-  </ul>
-</nav>
-  </header>
+        <ul>
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+</header>
 
-  <main>
-   <section aria-labelledby="welcome-heading" class="hero">
-  <h2 id="welcome-heading">Welcome to StudentHub</h2>
-  <p>Your one-stop portal for notices, timetables, study materials, and more.</p>
-</section>
 
-<section class="features-grid">
-  <div class="feature-card">
-    <h3>Notices</h3>
-    <p>Stay updated with the latest announcements from faculty and admin.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Timetable</h3>
-    <p>Check your daily class schedule at a glance.</p>
-  </div>
-  <div class="feature-card">
-    <h3>Study Materials</h3>
-    <p>Access notes and resources uploaded by your faculty.</p>
-  </div>
-</section>
-  </main>
+<!-- ================= MAIN CONTENT ================= -->
 
-  <footer>
-    <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
-  </footer>
+<main>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero home-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                STUDENTHUB PORTAL
+            </span>
+
+            <h2>
+                Everything for your
+                <span>student life.</span>
+            </h2>
+
+            <p>
+                Access notices, timetables, study materials and
+                important campus information from one convenient place.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="dashboard.html" class="btn">
+                    Go to Dashboard →
+                </a>
+
+                <a href="about.html" class="btn btn-secondary">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Small information card -->
+
+        <div class="hero-floating-card">
+
+            <div class="floating-icon">
+                ✓
+            </div>
+
+            <div>
+                <strong>Student information</strong>
+                <span>Organized in one place</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STUDENT ESSENTIALS ================= -->
+
+    <section class="home-section">
+
+        <div class="section-heading">
+
+            <span>STUDENT ESSENTIALS</span>
+
+            <h2>
+                Everything you need,
+                <span>in one place.</span>
+            </h2>
+
+            <p>
+                StudentHub helps you quickly access the information
+                you use most during your academic day.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <!-- Notices -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon notice-icon">
+                    📢
+                </div>
+
+                <span class="feature-number">01</span>
+
+                <h3>Notices</h3>
+
+                <p>
+                    View important announcements and academic
+                    updates from faculty and administration.
+                </p>
+
+                <a href="dashboard.html" class="feature-link">
+                    View notices →
+                </a>
+
+            </article>
+
+
+            <!-- Timetable -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon timetable-icon">
+                    📅
+                </div>
+
+                <span class="feature-number">02</span>
+
+                <h3>Timetable</h3>
+
+                <p>
+                    Check your class schedule and keep track of
+                    your upcoming academic activities.
+                </p>
+
+                <a href="dashboard.html" class="feature-link">
+                    View timetable →
+                </a>
+
+            </article>
+
+
+            <!-- Study Materials -->
+
+            <article class="feature-card">
+
+                <div class="feature-icon material-icon">
+                    📚
+                </div>
+
+                <span class="feature-number">03</span>
+
+                <h3>Study Materials</h3>
+
+                <p>
+                    Find notes and useful academic resources
+                    provided for your subjects.
+                </p>
+
+                <a href="dashboard.html" class="feature-link">
+                    View materials →
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUICK ACCESS ================= -->
+
+    <section class="home-section">
+
+        <div class="section-heading">
+
+            <span>QUICK ACCESS</span>
+
+            <h2>
+                Explore StudentHub
+            </h2>
+
+            <p>
+                Quickly find other sections of the portal.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <article class="feature-card">
+
+                <div class="feature-icon timetable-icon">
+                    🎓
+                </div>
+
+                <h3>Events</h3>
+
+                <p>
+                    Check upcoming college events and activities.
+                </p>
+
+                <a href="events.html" class="feature-link">
+                    View events →
+                </a>
+
+            </article>
+
+
+            <article class="feature-card">
+
+                <div class="feature-icon notice-icon">
+                    👤
+                </div>
+
+                <h3>Profile</h3>
+
+                <p>
+                    View and manage your student profile information.
+                </p>
+
+                <a href="profile.html" class="feature-link">
+                    View profile →
+                </a>
+
+            </article>
+
+
+            <article class="feature-card">
+
+                <div class="feature-icon material-icon">
+                    ❓
+                </div>
+
+                <h3>Help & FAQ</h3>
+
+                <p>
+                    Find answers to common questions about StudentHub.
+                </p>
+
+                <a href="faq.html" class="feature-link">
+                    View FAQ →
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SIMPLE CTA ================= -->
+
+    <section class="final-cta">
+
+        <div>
+
+            <span>STUDENTHUB</span>
+
+            <h2>
+                Ready to check your
+                <strong>dashboard?</strong>
+            </h2>
+
+        </div>
+
+        <a href="dashboard.html" class="btn cta-button">
+            Open Dashboard →
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <h3>StudentHub</h3>
+
+            <p>
+                Your digital campus companion.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                &copy; 2026 StudentHub Portal.
+                All rights reserved.
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+```
 
 </body>
 </html>
