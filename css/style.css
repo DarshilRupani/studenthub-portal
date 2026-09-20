@@ -3927,3 +3927,48 @@ html[data-theme="dark"] .feedback-note {background: var(--ui-surface); border: 1
 html[data-theme="dark"] .feedback-note > span {color: var(--text-light);}
 html[data-theme="dark"] .feedback-note p {color: var(--text-light);}
 html[data-theme="dark"] .feedback-bottom > span {color: var(--text-light);}
+
+/* Practical 5: registration form validation, password strength meter and CAPTCHA. */
+.error-message { margin: 0; color: #b91c1c; font-size: 0.82rem; font-weight: 600; line-height: 1.4; }
+.error-message:empty { display: none; }
+.error-message::before { content: "\26A0\FE0F  "; }
+.field-hint { margin: 0; color: #64748b; font-size: 0.78rem; line-height: 1.4; }
+.register-card .form-group input[aria-invalid="true"],
+.register-card .form-group select[aria-invalid="true"] { border-color: #b91c1c; background: #fef2f2; }
+.register-card .form-group input.is-valid,
+.register-card .form-group select.is-valid { border-color: #15803d; }
+.strength-meter { height: 8px; border-radius: 999px; background: #e2e8f0; overflow: hidden; }
+#strength-bar { display: block; width: 0; height: 100%; background: #b91c1c; transition: width 0.25s ease, background-color 0.25s ease; }
+#strength-bar[data-level="2"] { background: #ea580c; }
+#strength-bar[data-level="3"] { background: #ca8a04; }
+#strength-bar[data-level="4"] { background: #65a30d; }
+#strength-bar[data-level="5"] { background: #15803d; }
+.strength-text { margin: 0; color: var(--ui-muted); font-size: 0.8rem; font-weight: 600; }
+.strength-text:empty { display: none; }
+.choice-group { min-inline-size: 0; margin: 0 0 18px; padding: 0; border: 0; }
+.choice-group legend { padding: 0; margin-bottom: 8px; font-size: 0.85rem; font-weight: 600; color: var(--dark); }
+.choice-row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; }
+.register-card .form-group .choice { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0; font-weight: 500; cursor: pointer; }
+.register-card .form-group .choice input { width: auto; margin: 0; padding: 0; accent-color: #6c63ff; }
+.choice-group.has-error .choice-row { outline: 2px solid #b91c1c; outline-offset: 4px; border-radius: 6px; }
+.captcha-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0.8rem; }
+#captcha-canvas { max-width: 100%; border: 1px solid var(--border); border-radius: 9px; background: #eef2ff; }
+.stacked-form .captcha-refresh { width: auto; margin-top: 0; padding: 0.6rem 0.9rem; font-size: 0.85rem; }
+.form-status { padding: 0.9rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.9rem; line-height: 1.5; border: 1px solid transparent; }
+.form-status-error { background: #fef2f2; color: #991b1b; border-color: #fecaca; }
+.form-status-success { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+.form-status a { color: inherit; text-decoration: underline; font-weight: 700; }
+
+/* Dark theme equivalents for the Practical 5 components. */
+html[data-theme="dark"] .error-message { color: #fca5a5; }
+html[data-theme="dark"] .field-hint { color: var(--text-light); }
+html[data-theme="dark"] .register-card .form-group input[aria-invalid="true"],
+html[data-theme="dark"] .register-card .form-group select[aria-invalid="true"] { border-color: #f87171; background: #3b1d24; }
+html[data-theme="dark"] .register-card .form-group input.is-valid,
+html[data-theme="dark"] .register-card .form-group select.is-valid { border-color: #4ade80; }
+html[data-theme="dark"] .strength-meter { background: #334155; }
+html[data-theme="dark"] .choice-group legend,
+html[data-theme="dark"] .register-card .form-group .choice { color: var(--text-light); }
+html[data-theme="dark"] .choice-group.has-error .choice-row { outline-color: #f87171; }
+html[data-theme="dark"] .form-status-error { background: #3b1d24; color: #fecaca; border-color: #7f1d1d; }
+html[data-theme="dark"] .form-status-success { background: #14311f; color: #bbf7d0; border-color: #166534; }

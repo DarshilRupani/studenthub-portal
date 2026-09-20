@@ -11,6 +11,7 @@
 
 <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
+    <script src="js/validation.js" defer></script>
 </head>
 
 <body>
@@ -103,79 +104,113 @@
             </p>
 
 
-            <form action="index.html" method="get" class="stacked-form">
+            <form id="register-form" action="index.html" method="get" class="stacked-form" novalidate>
+
+                <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
 
                 <div class="form-group">
-
-                    <label for="fullname">
-                        Full Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="fullname"
-                        name="fullname"
-                        placeholder="Enter your full name"
-                        required
-                    >
-
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name"
+                           autocomplete="name" minlength="2" maxlength="50" required aria-describedby="fullname-error">
+                    <p class="error-message" id="fullname-error"></p>
                 </div>
 
-
                 <div class="form-group">
-
-                    <label for="reg-email">
-                        Email Address
-                    </label>
-
-                    <input
-                        type="email"
-                        id="reg-email"
-                        name="email"
-                        placeholder="you@example.com"
-                        required
-                    >
-
+                    <label for="reg-email">Email Address</label>
+                    <input type="email" id="reg-email" name="email" placeholder="you@example.com"
+                           autocomplete="email" required aria-describedby="email-error">
+                    <p class="error-message" id="email-error"></p>
                 </div>
 
-
                 <div class="form-group">
-
-                    <label for="reg-password">
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="reg-password"
-                        name="password"
-                        placeholder="Create a password"
-                        required
-                    >
-
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number"
+                           inputmode="numeric" maxlength="10" autocomplete="tel-national" required
+                           aria-describedby="mobile-hint mobile-error">
+                    <p class="field-hint" id="mobile-hint">10 digits, starting with 6, 7, 8 or 9.</p>
+                    <p class="error-message" id="mobile-error"></p>
                 </div>
 
+                <div class="form-group">
+                    <label for="reg-password">Password</label>
+                    <input type="password" id="reg-password" name="password" placeholder="Create a password"
+                           autocomplete="new-password" required
+                           aria-describedby="password-hint strength-text password-error">
+                    <p class="field-hint" id="password-hint">At least 8 characters with an uppercase letter, a lowercase letter, a number and a symbol.</p>
+                    <div class="strength-meter" aria-hidden="true"><span id="strength-bar" data-level="0"></span></div>
+                    <p class="strength-text" id="strength-text" aria-live="polite"></p>
+                    <p class="error-message" id="password-error"></p>
+                </div>
 
                 <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" placeholder="Re-enter your password"
+                           autocomplete="new-password" required aria-describedby="confirm-error">
+                    <p class="error-message" id="confirm-error"></p>
+                </div>
 
-                    <label for="role">
-                        I am a
-                    </label>
-
-                    <select id="role" name="role">
-
-                        <option value="student">
-                            Student
-                        </option>
-
-                        <option value="faculty">
-                            Faculty
-                        </option>
-
+                <div class="form-group">
+                    <label for="course">Course</label>
+                    <select id="course" name="course" required aria-describedby="course-error">
+                        <option value="">Select your course</option>
+                        <option value="btech-ce">B.Tech Computer Engineering</option>
+                        <option value="btech-it">B.Tech Information Technology</option>
+                        <option value="bca">BCA</option>
+                        <option value="mca">MCA</option>
+                        <option value="other">Other</option>
                     </select>
-
+                    <p class="error-message" id="course-error"></p>
                 </div>
 
+                <div class="form-group">
+                    <label for="year">Year</label>
+                    <select id="year" name="year" required aria-describedby="year-error">
+                        <option value="">Select your year</option>
+                        <option value="1">First year</option>
+                        <option value="2">Second year</option>
+                        <option value="3">Third year</option>
+                        <option value="4">Fourth year</option>
+                    </select>
+                    <p class="error-message" id="year-error"></p>
+                </div>
+
+                <fieldset class="form-group choice-group" id="gender-group" aria-describedby="gender-error">
+                    <legend>Gender</legend>
+                    <div class="choice-row">
+                        <label class="choice"><input type="radio" name="gender" value="male" required> Male</label>
+                        <label class="choice"><input type="radio" name="gender" value="female"> Female</label>
+                        <label class="choice"><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                    <p class="error-message" id="gender-error"></p>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="role">I am a</label>
+                    <select id="role" name="role">
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </div>
+
+                <div class="form-group captcha-group">
+                    <label for="captcha-input">Security check</label>
+                    <div class="captcha-row">
+                        <canvas id="captcha-canvas" width="170" height="52" role="img"
+                                aria-label="CAPTCHA image containing a 5-character code"></canvas>
+                        <button type="button" id="captcha-refresh" class="captcha-refresh">New code</button>
+                    </div>
+                    <input type="text" id="captcha-input" name="captcha" placeholder="Type the characters shown"
+                           autocomplete="off" autocapitalize="characters" maxlength="5" required
+                           aria-describedby="captcha-hint captcha-error">
+                    <p class="field-hint" id="captcha-hint">Type the 5 characters from the image. Not case sensitive.</p>
+                    <p class="error-message" id="captcha-error"></p>
+                </div>
+
+                <div class="form-group terms-group">
+                    <label class="choice"><input type="checkbox" id="terms" name="terms" required aria-describedby="terms-error">
+                        I accept the terms and conditions</label>
+                    <p class="error-message" id="terms-error"></p>
+                </div>
 
                 <button type="submit" class="register-button">
                     Create StudentHub Account →
