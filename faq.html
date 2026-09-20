@@ -10,8 +10,7 @@
 <title>StudentHub | FAQ</title>
 
 <link rel="stylesheet" href="css/style.css">
-
-
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -23,7 +22,11 @@
 
     <h1>StudentHub</h1>
 
-    <nav aria-label="Main navigation">
+    <div class="header-controls">
+        <button type="button" id="theme-toggle" aria-pressed="false" hidden>Dark mode</button>
+        <button type="button" id="menu-toggle" aria-controls="main-navigation" aria-expanded="false" hidden>Menu</button>
+    </div>
+    <nav id="main-navigation" aria-label="Main navigation">
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -34,6 +37,7 @@
             <li><a href="profile.html">Profile</a></li>
             <li><a href="faq.html" class="active">FAQ</a></li>
             <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -125,19 +129,10 @@
                     01
                 </div>
 
-                <div class="faq-question">
-
-                    <h3>
-                        What is StudentHub?
-                    </h3>
-
-                    <p>
-                        StudentHub is a digital campus companion that
+                <div class="faq-question"><h3><button class="faq-toggle" type="button" aria-expanded="true" aria-controls="faq-answer-1" id="faq-question-1">What is StudentHub?<span class="faq-symbol" aria-hidden="true">−</span></button></h3>
+                    <p id="faq-answer-1">StudentHub is a digital campus companion that
                         helps students access important academic
-                        information and campus activities in one place.
-                    </p>
-
-                </div>
+                        information and campus activities in one place.</p></div>
 
             </article>
 
@@ -150,19 +145,10 @@
                     02
                 </div>
 
-                <div class="faq-question">
-
-                    <h3>
-                        How do I create a StudentHub account?
-                    </h3>
-
-                    <p>
-                        Open the Register page from the navigation menu,
+                <div class="faq-question"><h3><button class="faq-toggle" type="button" aria-expanded="true" aria-controls="faq-answer-2" id="faq-question-2">How do I create a StudentHub account?<span class="faq-symbol" aria-hidden="true">−</span></button></h3>
+                    <p id="faq-answer-2">Open the Register page from the navigation menu,
                         enter your student information and submit the
-                        registration form.
-                    </p>
-
-                </div>
+                        registration form.</p></div>
 
             </article>
 
@@ -175,19 +161,10 @@
                     03
                 </div>
 
-                <div class="faq-question">
-
-                    <h3>
-                        What can I see on the dashboard?
-                    </h3>
-
-                    <p>
-                        The dashboard provides quick access to student
+                <div class="faq-question"><h3><button class="faq-toggle" type="button" aria-expanded="true" aria-controls="faq-answer-3" id="faq-question-3">What can I see on the dashboard?<span class="faq-symbol" aria-hidden="true">−</span></button></h3>
+                    <p id="faq-answer-3">The dashboard provides quick access to student
                         notices, timetable information and study
-                        materials.
-                    </p>
-
-                </div>
+                        materials.</p></div>
 
             </article>
 
@@ -200,19 +177,10 @@
                     04
                 </div>
 
-                <div class="faq-question">
-
-                    <h3>
-                        Where can I find upcoming campus events?
-                    </h3>
-
-                    <p>
-                        Visit the Events page to view upcoming
+                <div class="faq-question"><h3><button class="faq-toggle" type="button" aria-expanded="true" aria-controls="faq-answer-4" id="faq-question-4">Where can I find upcoming campus events?<span class="faq-symbol" aria-hidden="true">−</span></button></h3>
+                    <p id="faq-answer-4">Visit the Events page to view upcoming
                         technical activities, competitions and other
-                        campus events.
-                    </p>
-
-                </div>
+                        campus events.</p></div>
 
             </article>
 
@@ -225,19 +193,10 @@
                     05
                 </div>
 
-                <div class="faq-question">
-
-                    <h3>
-                        Can I update my profile information?
-                    </h3>
-
-                    <p>
-                        Yes. Open the Profile page and use the
+                <div class="faq-question"><h3><button class="faq-toggle" type="button" aria-expanded="true" aria-controls="faq-answer-5" id="faq-question-5">Can I update my profile information?<span class="faq-symbol" aria-hidden="true">−</span></button></h3>
+                    <p id="faq-answer-5">Yes. Open the Profile page and use the
                         Update Information section to edit your
-                        basic student details.
-                    </p>
-
-                </div>
+                        basic student details.</p></div>
 
             </article>
 
@@ -250,19 +209,10 @@
                     06
                 </div>
 
-                <div class="faq-question">
-
-                    <h3>
-                        What should I do if I have a problem?
-                    </h3>
-
-                    <p>
-                        If you cannot find an answer here, visit the
+                <div class="faq-question"><h3><button class="faq-toggle" type="button" aria-expanded="true" aria-controls="faq-answer-6" id="faq-question-6">What should I do if I have a problem?<span class="faq-symbol" aria-hidden="true">−</span></button></h3>
+                    <p id="faq-answer-6">If you cannot find an answer here, visit the
                         Feedback page and send your question or feedback
-                        to the StudentHub team.
-                    </p>
-
-                </div>
+                        to the StudentHub team.</p></div>
 
             </article>
 
@@ -326,7 +276,6 @@
     </div>
 
 </footer>
-```
 
 </body>
 

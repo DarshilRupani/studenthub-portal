@@ -10,8 +10,7 @@
 <title>StudentHub | Events</title>
 
 <link rel="stylesheet" href="css/style.css">
-
-
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -22,7 +21,11 @@
 <header>
     <h1>StudentHub</h1>
 
-    <nav aria-label="Main navigation">
+    <div class="header-controls">
+        <button type="button" id="theme-toggle" aria-pressed="false" hidden>Dark mode</button>
+        <button type="button" id="menu-toggle" aria-controls="main-navigation" aria-expanded="false" hidden>Menu</button>
+    </div>
+    <nav id="main-navigation" aria-label="Main navigation">
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -33,6 +36,7 @@
             <li><a href="profile.html">Profile</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -220,7 +224,6 @@
     </div>
 
 </footer>
-```
 
 </body>
 </html>

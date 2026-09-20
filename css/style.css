@@ -3714,3 +3714,216 @@ color: #a5b4fc;
 
 
 }
+
+
+/* Practical 4: DOM interactivity and light/dark theme. */
+[hidden] { display: none !important; }
+:root { --ui-surface: #fff; --ui-tint: #eef2ff; --ui-heading: #1e293b; --ui-muted: #475569; }
+:focus-visible { outline: 3px solid #7c3aed !important; outline-offset: 4px; }
+.header-controls { display: flex; flex-wrap: wrap; gap: .6rem; margin: .5rem 0 1rem; }
+.header-controls button { border: 1px solid #a5b4fc; }
+.notification-banner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.25rem; margin-bottom: 1.5rem; background: var(--ui-tint); border: 1px solid var(--border); border-radius: 12px; }
+.notification-banner p { color: var(--ui-heading); margin: 0; }
+.campus-slider { background: var(--ui-surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin: 0 0 3rem; }
+.highlight-slide { padding: 1.5rem 0; min-height: 180px; }
+.highlight-slide h3 { color: var(--ui-heading); font-size: clamp(1.4rem, 3vw, 2rem); margin: .5rem 0; }
+.highlight-slide p { color: var(--ui-muted); margin-bottom: 1rem; }
+.slide-tag { color: var(--primary); font-size: .75rem; font-weight: bold; letter-spacing: 2px; }
+.slider-controls { display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
+.slider-controls p { color: var(--ui-muted); }
+.faq-toggle { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; background: transparent; color: var(--ui-heading); padding: .4rem 0; text-align: left; font: inherit; font-weight: 700; }
+.faq-toggle:hover { background: transparent; color: var(--primary); transform: none; }
+.faq-symbol { font-size: 1.5rem; flex-shrink: 0; }
+.faq-question { min-width: 0; }
+#guide-dialog { position: fixed; margin: auto; width: min(520px, calc(100% - 32px)); max-height: 85vh; overflow: auto; padding: 2rem; border: 1px solid var(--border); border-radius: 16px; background: var(--ui-surface); color: var(--ui-heading); box-shadow: 0 20px 80px #0005; }
+#guide-dialog::backdrop { background: #0f172ab3; }
+#guide-dialog p, #guide-dialog ul { margin: 1rem 0; }
+#guide-dialog ul { padding-left: 1.3rem; }
+html:has(#guide-dialog[open]) { overflow: hidden; }
+@media (max-width: 767px) {
+    #main-navigation ul { flex-direction: column; }
+    #main-navigation a { display: block; }
+    .notification-banner { flex-direction: column; align-items: flex-start; }
+    .campus-slider { padding: 1.2rem; }
+    .slider-controls button { padding: .7rem; }
+}
+/* Respect the user's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+html[data-theme="dark"] {
+    color-scheme: dark;
+    --dark: #f1f5f9; --text: #e2e8f0; --text-light: #cbd5e1;
+    --background: #0f172a; --surface: #1e293b; --border: #475569;
+    --ui-surface: #1e293b; --ui-tint: #253354; --ui-heading: #f1f5f9; --ui-muted: #cbd5e1;
+}
+html[data-theme="dark"] main a:not(.btn):not([class*="button"]):not(.sidebar-active) { color: #c4b5fd; }
+html[data-theme="dark"] .slide-tag { color: #c4b5fd; }
+
+/* Dark equivalents of the original page colours. */
+html[data-theme="dark"] .hero {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .btn-secondary {background: var(--ui-surface);}
+html[data-theme="dark"] .btn-secondary:hover {background: var(--ui-tint);}
+html[data-theme="dark"] .feature-card:hover {border-color: var(--border);}
+html[data-theme="dark"] .notice-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .timetable-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .material-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .form-group input, html[data-theme="dark"] .form-group select, html[data-theme="dark"] .form-group textarea {background: var(--ui-surface);}
+html[data-theme="dark"] .dashboard-panel {background: var(--ui-surface);}
+html[data-theme="dark"] .dashboard-welcome {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .dashboard-mark {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .panel-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .notice-item {background: var(--ui-surface);}
+html[data-theme="dark"] .notice-item:hover {background: var(--ui-tint);}
+html[data-theme="dark"] .schedule-item {background: var(--ui-surface);}
+html[data-theme="dark"] .schedule-item:hover {background: var(--ui-tint);}
+html[data-theme="dark"] .materials-box {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .materials-icon {background: var(--ui-surface);}
+html[data-theme="dark"] .stat-card {background: var(--ui-surface);}
+html[data-theme="dark"] .stat-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .hero-badge {background: var(--ui-tint);}
+html[data-theme="dark"] .why-section {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .why-point {background: var(--ui-surface);}
+html[data-theme="dark"] .about-hero {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .about-logo {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .about-card {background: var(--ui-surface);}
+html[data-theme="dark"] .about-card-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .mission-card {background: var(--ui-surface);}
+html[data-theme="dark"] .about-highlight {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .profile-label {color: var(--text-light);}
+html[data-theme="dark"] .profile-heading h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .profile-heading p {color: var(--text-light);}
+html[data-theme="dark"] .profile-card, html[data-theme="dark"] .edit-profile-card {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .profile-avatar {border: 3px solid var(--border);}
+html[data-theme="dark"] .profile-role {color: var(--text-light);}
+html[data-theme="dark"] .profile-status {color: #c4b5fd;}
+html[data-theme="dark"] .profile-divider {background: var(--ui-surface);}
+html[data-theme="dark"] .profile-details span, html[data-theme="dark"] .info-box span, html[data-theme="dark"] .card-heading > div > span, html[data-theme="dark"] .edit-heading > div > span {color: var(--text-light);}
+html[data-theme="dark"] .profile-details strong {color: var(--text-light);}
+html[data-theme="dark"] .info-box {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .info-box strong {color: var(--text-light);}
+html[data-theme="dark"] .profile-form label {color: var(--text-light);}
+html[data-theme="dark"] .profile-form input {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .login-label {color: #c4b5fd;}
+html[data-theme="dark"] .login-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .login-intro > p {color: var(--text-light);}
+html[data-theme="dark"] .login-highlight {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .login-highlight > span {color: var(--text-light);}
+html[data-theme="dark"] .login-highlight small {color: var(--text-light);}
+html[data-theme="dark"] .login-card {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .login-card-heading span {color: var(--text-light);}
+html[data-theme="dark"] .login-card-text {color: var(--text-light);}
+html[data-theme="dark"] .login-card .form-group input {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .login-card .form-group input:focus {border-color: var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .remember-option {color: var(--text-light);}
+html[data-theme="dark"] .forgot-link {color: #c4b5fd;}
+html[data-theme="dark"] .login-divider::before, html[data-theme="dark"] .login-divider::after {background: var(--ui-surface);}
+html[data-theme="dark"] .login-divider span {color: var(--text-light);}
+html[data-theme="dark"] .register-link {color: var(--text-light);}
+html[data-theme="dark"] .register-link:hover {color: #c4b5fd;}
+html[data-theme="dark"] .register-label {color: #c4b5fd;}
+html[data-theme="dark"] .register-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .register-intro > p {color: var(--text-light);}
+html[data-theme="dark"] .register-note {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .register-note > span {background: var(--ui-tint); color: #c4b5fd;}
+html[data-theme="dark"] .register-note small {color: var(--text-light);}
+html[data-theme="dark"] .register-card {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .register-card-heading span {color: var(--text-light);}
+html[data-theme="dark"] .register-card-text {color: var(--text-light);}
+html[data-theme="dark"] .register-card .form-group input, html[data-theme="dark"] .register-card .form-group select {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .register-card .form-group input:focus, html[data-theme="dark"] .register-card .form-group select:focus {border-color: var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .register-footer span {color: var(--text-light);}
+html[data-theme="dark"] .register-footer a {color: #c4b5fd;}
+html[data-theme="dark"] .events-label {color: #c4b5fd;}
+html[data-theme="dark"] .events-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .events-intro p {color: var(--text-light);}
+html[data-theme="dark"] .events-mark {border: 1px solid var(--border); color: var(--text-light);}
+html[data-theme="dark"] .events-heading {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .events-heading > div > span {color: var(--text-light);}
+html[data-theme="dark"] .events-heading p {color: var(--text-light);}
+html[data-theme="dark"] .event-card {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .event-card:hover {border-color: var(--border);}
+html[data-theme="dark"] .event-date {background: var(--ui-tint);}
+html[data-theme="dark"] .event-date strong {color: #c4b5fd;}
+html[data-theme="dark"] .event-date span {color: var(--text-light);}
+html[data-theme="dark"] .event-type {color: #c4b5fd;}
+html[data-theme="dark"] .event-content h3 {color: var(--text-light);}
+html[data-theme="dark"] .event-content p {color: var(--text-light);}
+html[data-theme="dark"] .event-meta {color: var(--text-light);}
+html[data-theme="dark"] .events-note span {color: var(--text-light);}
+html[data-theme="dark"] .faq-label {color: #c4b5fd;}
+html[data-theme="dark"] .faq-intro h2 {color: var(--text-light);}
+html[data-theme="dark"] .faq-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .faq-intro p {color: var(--text-light);}
+html[data-theme="dark"] .faq-categories span {background: var(--ui-tint); color: #c4b5fd;}
+html[data-theme="dark"] .faq-mark {border: 1px solid var(--border); color: #c4b5fd;}
+html[data-theme="dark"] .faq-side-info > span {color: var(--text-light);}
+html[data-theme="dark"] .faq-side-info strong {color: var(--text-light);}
+html[data-theme="dark"] .faq-side-info p {color: var(--text-light);}
+html[data-theme="dark"] .faq-heading {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .faq-heading > div > span {color: var(--text-light);}
+html[data-theme="dark"] .faq-heading h3 {color: var(--text-light);}
+html[data-theme="dark"] .faq-heading p {color: var(--text-light);}
+html[data-theme="dark"] .faq-item {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .faq-item:hover {border-color: var(--border);}
+html[data-theme="dark"] .faq-number {color: var(--text-light);}
+html[data-theme="dark"] .faq-question h3 {color: var(--text-light);}
+html[data-theme="dark"] .faq-question p {color: var(--text-light);}
+html[data-theme="dark"] .faq-help > div > span {color: var(--text-light);}
+html[data-theme="dark"] .feedback-label {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-intro h2 {color: var(--text-light);}
+html[data-theme="dark"] .feedback-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-intro p {color: var(--text-light);}
+html[data-theme="dark"] .feedback-mark {border: 1px solid var(--border); color: #c4b5fd;}
+html[data-theme="dark"] .feedback-card {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-card-heading {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-card-heading > div > span {color: var(--text-light);}
+html[data-theme="dark"] .feedback-card-heading h3 {color: var(--text-light);}
+html[data-theme="dark"] .feedback-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .feedback-form label {color: var(--text-light);}
+html[data-theme="dark"] .rating-section select, html[data-theme="dark"] .feedback-form textarea {border: 1px solid var(--border); background: var(--ui-surface); color: var(--text-light);}
+html[data-theme="dark"] .rating-section select:focus, html[data-theme="dark"] .feedback-form textarea:focus {border-color: var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .feedback-form textarea::placeholder {color: var(--text-light);}
+html[data-theme="dark"] .feedback-side {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-side > span {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-side h3 {color: var(--text-light);}
+html[data-theme="dark"] .feedback-side h3 strong {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-side > p {color: var(--text-light);}
+html[data-theme="dark"] .feedback-note {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-note > span {color: var(--text-light);}
+html[data-theme="dark"] .feedback-note p {color: var(--text-light);}
+html[data-theme="dark"] .feedback-bottom > span {color: var(--text-light);}
+html[data-theme="dark"] .faq-label {color: #c4b5fd;}
+html[data-theme="dark"] .faq-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .faq-intro p {color: var(--text-light);}
+html[data-theme="dark"] .faq-categories span {background: var(--ui-tint); color: #c4b5fd;}
+html[data-theme="dark"] .faq-side-info {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .faq-side-info > span {color: var(--text-light);}
+html[data-theme="dark"] .faq-heading {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .faq-heading > div > span {color: var(--text-light);}
+html[data-theme="dark"] .faq-heading p {color: var(--text-light);}
+html[data-theme="dark"] .faq-item {border: 1px solid var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .faq-item:hover {border-color: var(--border);}
+html[data-theme="dark"] .faq-number {background: var(--ui-tint); color: #c4b5fd;}
+html[data-theme="dark"] .faq-question p {color: var(--text-light);}
+html[data-theme="dark"] .faq-help > div > span {color: var(--text-light);}
+html[data-theme="dark"] .feedback-label {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-intro h2 span {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-intro p {color: var(--text-light);}
+html[data-theme="dark"] .feedback-mark {border: 1px solid var(--border); color: #c4b5fd;}
+html[data-theme="dark"] .feedback-card {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-card-heading {border-bottom: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-card-heading > div > span {color: var(--text-light);}
+html[data-theme="dark"] .feedback-icon {background: var(--ui-tint);}
+html[data-theme="dark"] .feedback-form label {color: var(--text-light);}
+html[data-theme="dark"] .feedback-form select, html[data-theme="dark"] .feedback-form textarea {border: 1px solid var(--border); background: var(--ui-surface); color: var(--text-light);}
+html[data-theme="dark"] .feedback-form select:focus, html[data-theme="dark"] .feedback-form textarea:focus {border-color: var(--border); background: var(--ui-surface);}
+html[data-theme="dark"] .feedback-side {background: var(--ui-tint); border: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-side > span {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-side h3 strong {color: #c4b5fd;}
+html[data-theme="dark"] .feedback-side > p {color: var(--text-light);}
+html[data-theme="dark"] .feedback-note {background: var(--ui-surface); border: 1px solid var(--border);}
+html[data-theme="dark"] .feedback-note > span {color: var(--text-light);}
+html[data-theme="dark"] .feedback-note p {color: var(--text-light);}
+html[data-theme="dark"] .feedback-bottom > span {color: var(--text-light);}

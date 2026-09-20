@@ -10,8 +10,7 @@
 <title>StudentHub | Home</title>
 
 <link rel="stylesheet" href="css/style.css">
-
-
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -22,7 +21,11 @@
 <header>
     <h1>StudentHub</h1>
 
-    <nav aria-label="Main navigation">
+    <div class="header-controls">
+        <button type="button" id="theme-toggle" aria-pressed="false" hidden>Dark mode</button>
+        <button type="button" id="menu-toggle" aria-controls="main-navigation" aria-expanded="false" hidden>Menu</button>
+    </div>
+    <nav id="main-navigation" aria-label="Main navigation">
         <ul>
             <li><a href="home.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -33,6 +36,7 @@
             <li><a href="profile.html">Profile</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
@@ -41,6 +45,10 @@
 <!-- ================= MAIN CONTENT ================= -->
 
 <main>
+    <aside class="notification-banner" id="welcome-notice" aria-label="StudentHub notice">
+        <p><strong>Welcome to StudentHub.</strong> Explore campus events and find answers in the Help Center.</p>
+        <button type="button" id="dismiss-notice" aria-label="Dismiss welcome notice" hidden>Dismiss</button>
+    </aside>
 
     <!-- ================= HERO ================= -->
 
@@ -63,6 +71,7 @@
             </p>
 
             <div class="hero-actions">
+                <button type="button" id="open-guide" aria-haspopup="dialog" hidden>Quick guide</button>
 
                 <a href="dashboard.html" class="btn">
                     Go to Dashboard →
@@ -94,6 +103,29 @@
 
     </section>
 
+
+    <section class="campus-slider" aria-labelledby="highlights-heading" aria-roledescription="carousel">
+        <h2 id="highlights-heading">Campus highlights</h2>
+        <div id="highlight-slides">
+            <article class="highlight-slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <span class="slide-tag">EXPLORE</span><h3>Find your next campus activity</h3>
+                <p>Browse technical workshops, competitions and student events.</p><a href="events.html">Explore events &rarr;</a>
+            </article>
+            <article class="highlight-slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
+                <span class="slide-tag">ORGANIZE</span><h3>Your academic day in one place</h3>
+                <p>Check the dashboard for notices, timetable information and study materials.</p><a href="dashboard.html">Open dashboard &rarr;</a>
+            </article>
+            <article class="highlight-slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
+                <span class="slide-tag">GET HELP</span><h3>A quick answer is one click away</h3>
+                <p>Visit the FAQ page for help with common StudentHub questions.</p><a href="faq.html">Visit the Help Center &rarr;</a>
+            </article>
+        </div>
+        <div class="slider-controls" hidden>
+            <button type="button" id="previous-slide" aria-controls="highlight-slides">Previous</button>
+            <p id="slide-status" role="status" aria-live="polite" aria-atomic="true">Slide 1 of 3</p>
+            <button type="button" id="next-slide" aria-controls="highlight-slides">Next</button>
+        </div>
+    </section>
 
     <!-- ================= STUDENT ESSENTIALS ================= -->
 
@@ -324,7 +356,13 @@
     </div>
 
 </footer>
-```
 
+<dialog id="guide-dialog" aria-labelledby="guide-title" aria-describedby="guide-description">
+    <h2 id="guide-title">Welcome to StudentHub</h2>
+    <p id="guide-description">Use the navigation menu to explore your student portal.</p>
+    <ul><li>Dashboard: notices, timetable and materials.</li><li>Events: campus activities and workshops.</li><li>FAQ: click a question to reveal its answer.</li></ul>
+    <p>Use the theme button to switch between light and dark mode.</p>
+    <button type="button" id="close-guide" autofocus>Close guide</button>
+</dialog>
 </body>
 </html>
