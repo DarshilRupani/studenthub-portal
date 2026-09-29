@@ -1,0 +1,18 @@
+[
+  { "id": 1, "title": "Hackathon 2026", "category": "Technical", "date": "2026-10-05", "location": "Computer Lab 1", "description": "24-hour coding challenge for all branches." },
+  { "id": 2, "title": "Annual Cultural Fest", "category": "Cultural", "date": "2026-10-12", "location": "Main Auditorium", "description": "Dance, music and drama performances by students." },
+  { "id": 3, "title": "Inter-College Cricket Cup", "category": "Sports", "date": "2026-10-15", "location": "College Ground", "description": "Knockout cricket tournament with 8 teams." },
+  { "id": 4, "title": "Web Development Workshop", "category": "Workshop", "date": "2026-10-18", "location": "Seminar Hall", "description": "Hands-on session on HTML, CSS and JavaScript." },
+  { "id": 5, "title": "Guest Lecture on AI", "category": "Academic", "date": "2026-10-20", "location": "Room 204", "description": "Industry expert talks on the future of AI." },
+  { "id": 6, "title": "Blood Donation Camp", "category": "Social", "date": "2026-10-22", "location": "Medical Room", "description": "Donate blood and support the local hospital." },
+  { "id": 7, "title": "Poster Making Contest", "category": "Cultural", "date": "2026-10-25", "location": "Art Room", "description": "Design posters on the theme of sustainability." },
+  { "id": 8, "title": "Placement Preparation Session", "category": "Academic", "date": "2026-10-28", "location": "Room 101", "description": "Resume building and mock interview tips." },
+  { "id": 9, "title": "Chess Championship", "category": "Sports", "date": "2026-11-02", "location": "Indoor Hall", "description": "Individual chess tournament open to all students." },
+  { "id": 10, "title": "Git and GitHub Bootcamp", "category": "Workshop", "date": "2026-11-05", "location": "Computer Lab 2", "description": "Learn version control and collaboration." },
+  { "id": 11, "title": "Science Exhibition", "category": "Technical", "date": "2026-11-09", "location": "Exhibition Hall", "description": "Students showcase working models and projects." },
+  { "id": 12, "title": "Tree Plantation Drive", "category": "Social", "date": "2026-11-12", "location": "Campus Garden", "description": "Plant saplings around the campus." },
+  { "id": 13, "title": "Debate Competition", "category": "Cultural", "date": "2026-11-16", "location": "Room 305", "description": "Inter-department debate on current affairs." },
+  { "id": 14, "title": "Cyber Security Awareness Talk", "category": "Technical", "date": "2026-11-19", "location": "Seminar Hall", "description": "Learn to stay safe online." },
+  { "id": 15, "title": "Annual Sports Day", "category": "Sports", "date": "2026-11-23", "location": "College Ground", "description": "Track and field events with prizes." },
+  { "id": 16, "title": "Career Guidance Seminar", "category": "Academic", "date": "2026-11-26", "location": "Main Auditorium", "description": "Explore career paths after graduation." }
+]

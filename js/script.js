@@ -1,3 +1,4 @@
+
 // Practical 4: shared UI behaviour. Loaded with defer after HTML is parsed.
 'use strict';
 

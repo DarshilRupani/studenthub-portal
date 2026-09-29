@@ -3972,3 +3972,116 @@ html[data-theme="dark"] .register-card .form-group .choice { color: var(--text-l
 html[data-theme="dark"] .choice-group.has-error .choice-row { outline-color: #f87171; }
 html[data-theme="dark"] .form-status-error { background: #3b1d24; color: #fecaca; border-color: #7f1d1d; }
 html[data-theme="dark"] .form-status-success { background: #14311f; color: #bbf7d0; border-color: #166534; }
+/* =========================================================
+   Practical 6: JSON data, search, filter, sort, pagination
+   (uses theme variables, so it works in light and dark mode)
+   ========================================================= */
+
+.events-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1 1 220px;
+}
+
+.control-group label {
+    color: var(--dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.control-group input,
+.control-group select {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--ui-surface);
+    color: var(--text);
+    font: inherit;
+}
+
+.control-group input:focus,
+.control-group select:focus {
+    outline: none;
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+#events-count,
+#students-count {
+    margin: 0 0 0.6rem;
+    font-size: 0.9rem;
+}
+
+.data-notice {
+    margin: 0 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #b45309;
+}
+
+.data-notice:empty {
+    display: none;
+}
+
+.events-message {
+    padding: 1.25rem;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.events-message.error {
+    border-color: #b91c1c;
+    color: #b91c1c;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.pagination button {
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled):not(.current) {
+    background: var(--ui-tint);
+    transform: none;
+}
+
+.pagination button.current {
+    background: #6c63ff;
+    border-color: #6c63ff;
+    color: #fff;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Dark theme */
+html[data-theme="dark"] .data-notice { color: #fbbf24; }
+html[data-theme="dark"] .events-message.error { border-color: #f87171; color: #fca5a5; }
+html[data-theme="dark"] .control-group input:focus,
+html[data-theme="dark"] .control-group select:focus { border-color: #c4b5fd; }  

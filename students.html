@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>StudentHub | Events</title>
+    <title>StudentHub | Students</title>
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
-    <script type="module" src="js/events.js"></script>
+    <script type="module" src="js/students.js"></script>
 </head>
 
 <body>
@@ -31,8 +31,8 @@
             <li><a href="index.html">Login</a></li>
             <li><a href="register.html">Register</a></li>
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="events.html" class="active">Events</a></li>
-            <li><a href="students.html">Students</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="students.html" class="active">Students</a></li>
             <li><a href="profile.html">Profile</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="feedback.html">Feedback</a></li>
@@ -47,68 +47,59 @@
 
     <section class="events-intro">
         <div>
-            <span class="events-label">CAMPUS ACTIVITIES</span>
+            <span class="events-label">STUDENT DIRECTORY</span>
             <h2>
-                What's happening<br>
-                <span>on campus?</span>
+                Meet your<br>
+                <span>fellow students</span>
             </h2>
             <p>
-                Explore upcoming academic, technical and student
-                activities happening around the campus.
+                Browse student profiles by name, department and CGPA.
             </p>
         </div>
         <div class="events-mark">2026</div>
     </section>
 
-    <section class="events-section" aria-labelledby="events-heading">
+    <section class="events-section" aria-labelledby="students-heading">
 
         <div class="events-heading">
             <div>
-                <span>UPCOMING</span>
-                <h3 id="events-heading">Campus Events</h3>
+                <span>DIRECTORY</span>
+                <h3 id="students-heading">Student Profiles</h3>
             </div>
-            <p>Keep an eye on what's coming next.</p>
+            <p>Loaded from an external JSON file.</p>
         </div>
 
         <div class="events-controls">
             <div class="control-group">
-                <label for="event-search">Search events</label>
-                <input type="search" id="event-search" placeholder="Search by title, place or description">
+                <label for="student-search">Search students</label>
+                <input type="search" id="student-search" placeholder="Search by name, department or email">
             </div>
 
             <div class="control-group">
-                <label for="event-category">Category</label>
-                <select id="event-category">
-                    <option value="all">All categories</option>
+                <label for="student-department">Department</label>
+                <select id="student-department">
+                    <option value="all">All departments</option>
                 </select>
             </div>
 
             <div class="control-group">
-                <label for="event-sort">Sort by</label>
-                <select id="event-sort">
-                    <option value="date-asc">Date (earliest first)</option>
-                    <option value="date-desc">Date (latest first)</option>
-                    <option value="title-asc">Title (A to Z)</option>
-                    <option value="title-desc">Title (Z to A)</option>
+                <label for="student-sort">Sort by</label>
+                <select id="student-sort">
+                    <option value="name-asc">Name (A to Z)</option>
+                    <option value="name-desc">Name (Z to A)</option>
+                    <option value="cgpa-desc">CGPA (high to low)</option>
+                    <option value="cgpa-asc">CGPA (low to high)</option>
                 </select>
             </div>
         </div>
 
-        <p id="events-count" aria-live="polite"></p>
+        <p id="students-count" aria-live="polite"></p>
         <p id="data-notice" class="data-notice" aria-live="polite"></p>
 
-        <div class="events-grid" id="events-container"></div>
+        <div class="events-grid" id="students-container"></div>
 
-        <nav id="pagination" class="pagination" aria-label="Events pages"></nav>
+        <nav id="pagination" class="pagination" aria-label="Student pages"></nav>
 
-    </section>
-
-    <section class="events-note">
-        <div class="events-note-icon">+</div>
-        <div>
-            <span>STAY UPDATED</span>
-            <h3>Don't miss the next campus activity.</h3>
-        </div>
     </section>
 
 </main>

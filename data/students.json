@@ -1,0 +1,18 @@
+[
+  { "id": 1, "name": "Aarav Patel", "department": "Computer Engineering", "semester": 3, "cgpa": 8.72, "email": "aarav.patel@studenthub.edu" },
+  { "id": 2, "name": "Diya Shah", "department": "Information Technology", "semester": 3, "cgpa": 9.10, "email": "diya.shah@studenthub.edu" },
+  { "id": 3, "name": "Rohan Mehta", "department": "Mechanical Engineering", "semester": 5, "cgpa": 7.45, "email": "rohan.mehta@studenthub.edu" },
+  { "id": 4, "name": "Ishita Joshi", "department": "Civil Engineering", "semester": 1, "cgpa": 8.05, "email": "ishita.joshi@studenthub.edu" },
+  { "id": 5, "name": "Kabir Desai", "department": "Electrical Engineering", "semester": 7, "cgpa": 8.31, "email": "kabir.desai@studenthub.edu" },
+  { "id": 6, "name": "Anaya Trivedi", "department": "Computer Engineering", "semester": 5, "cgpa": 9.34, "email": "anaya.trivedi@studenthub.edu" },
+  { "id": 7, "name": "Vivaan Parmar", "department": "Information Technology", "semester": 1, "cgpa": 7.88, "email": "vivaan.parmar@studenthub.edu" },
+  { "id": 8, "name": "Saanvi Rana", "department": "Civil Engineering", "semester": 3, "cgpa": 8.56, "email": "saanvi.rana@studenthub.edu" },
+  { "id": 9, "name": "Arjun Solanki", "department": "Mechanical Engineering", "semester": 7, "cgpa": 7.92, "email": "arjun.solanki@studenthub.edu" },
+  { "id": 10, "name": "Meera Bhatt", "department": "Electrical Engineering", "semester": 5, "cgpa": 8.87, "email": "meera.bhatt@studenthub.edu" },
+  { "id": 11, "name": "Yash Vyas", "department": "Computer Engineering", "semester": 1, "cgpa": 8.20, "email": "yash.vyas@studenthub.edu" },
+  { "id": 12, "name": "Kavya Modi", "department": "Information Technology", "semester": 7, "cgpa": 9.02, "email": "kavya.modi@studenthub.edu" },
+  { "id": 13, "name": "Harsh Chauhan", "department": "Mechanical Engineering", "semester": 3, "cgpa": 7.15, "email": "harsh.chauhan@studenthub.edu" },
+  { "id": 14, "name": "Nidhi Pandya", "department": "Civil Engineering", "semester": 5, "cgpa": 8.44, "email": "nidhi.pandya@studenthub.edu" },
+  { "id": 15, "name": "Parth Gohil", "department": "Electrical Engineering", "semester": 1, "cgpa": 7.66, "email": "parth.gohil@studenthub.edu" },
+  { "id": 16, "name": "Riya Thakkar", "department": "Computer Engineering", "semester": 7, "cgpa": 9.21, "email": "riya.thakkar@studenthub.edu" }
+]

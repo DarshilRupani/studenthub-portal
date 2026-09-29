@@ -1,0 +1,18 @@
+[
+  { "id": 1, "category": "Account", "question": "How do I create a StudentHub account?", "answer": "Open the Register page, fill in your details and submit the form." },
+  { "id": 2, "category": "Account", "question": "What if I forget my password?", "answer": "Use the Forgot password link on the Login page to reset it." },
+  { "id": 3, "category": "Account", "question": "Can I update my profile details?", "answer": "Yes, open the Profile page and edit your information." },
+  { "id": 4, "category": "Events", "question": "Where can I see upcoming events?", "answer": "All campus events are listed on the Events page." },
+  { "id": 5, "category": "Events", "question": "Can I search for a specific event?", "answer": "Yes, use the search box and category filter on the Events page." },
+  { "id": 6, "category": "Events", "question": "How often is the events list updated?", "answer": "The list is refreshed whenever the college publishes a new activity." },
+  { "id": 7, "category": "Academics", "question": "Where can I find my timetable?", "answer": "Your timetable is available from the Dashboard." },
+  { "id": 8, "category": "Academics", "question": "How do I view important notices?", "answer": "Notices are shown on the Dashboard and the Home page." },
+  { "id": 9, "category": "Academics", "question": "Can I download study material?", "answer": "Study material links will be added by faculty on the Dashboard." },
+  { "id": 10, "category": "Support", "question": "How can I contact the admin team?", "answer": "Use the form on the Contact page." },
+  { "id": 11, "category": "Support", "question": "How do I give feedback about the portal?", "answer": "Submit your comments on the Feedback page." },
+  { "id": 12, "category": "Support", "question": "Who can I ask about a technical problem?", "answer": "Send a message from the Contact page with a short description." },
+  { "id": 13, "category": "General", "question": "Is StudentHub available on mobile?", "answer": "Yes, the layout adapts to phones and tablets." },
+  { "id": 14, "category": "General", "question": "Does StudentHub have a dark mode?", "answer": "Yes, use the theme button in the header." },
+  { "id": 15, "category": "General", "question": "Is my data stored on a server?", "answer": "This demo portal keeps only small preferences in your browser." },
+  { "id": 16, "category": "General", "question": "Which browsers are supported?", "answer": "Any modern browser such as Chrome, Edge, Firefox or Safari." }
+]
