@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub | Registrations</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <script src="js/registrations.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>StudentHub</h1>
+    <div class="header-controls">
+        <button type="button" id="theme-toggle" aria-pressed="false" hidden>Dark mode</button>
+        <button type="button" id="menu-toggle" aria-controls="main-navigation" aria-expanded="false" hidden>Menu</button>
+    </div>
+    <nav id="main-navigation" aria-label="Main navigation">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="students.html">Students</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="registrations.html" class="active">Registrations</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="events-main">
+    <section class="events-intro">
+        <div>
+            <span class="events-label">ADMIN VIEW</span>
+            <h2>Registration<br><span>submissions</span></h2>
+            <p>Every account request submitted through the Register page, stored server-side in JSON and CSV. Passwords are never stored or shown here.</p>
+        </div>
+        <div class="events-mark">P7</div>
+    </section>
+
+    <section class="events-section" aria-labelledby="registrations-heading">
+        <div class="events-heading">
+            <div>
+                <span>STORED RECORDS</span>
+                <h3 id="registrations-heading">Registrations</h3>
+            </div>
+            <p>Loaded from php/get-registrations.php.</p>
+        </div>
+
+        <p id="registrations-count" aria-live="polite"></p>
+        <div class="events-grid" id="registrations-container"></div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>StudentHub</h3>
+            <p>Your digital campus companion.</p>
+        </div>
+        <div>
+            <p>&copy; 2026 StudentHub Portal. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

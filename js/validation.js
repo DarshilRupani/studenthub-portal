@@ -1,4 +1,5 @@
-// Practical 5: registration form validation. Loaded with defer on register.html only.
+// Practical 5: registration form validation. Practical 7: server submission added.
+// Loaded with defer on register.html only.
 'use strict';
 
 (function () {
@@ -233,11 +234,43 @@
         });
     });
 
-    // ---------- 6. Submit handling ----------
+    // ---------- 6. CSRF token (Practical 7) ----------
+    function fetchCsrfToken() {
+        fetch('php/get-csrf-token.php')
+            .then((response) => response.json())
+            .then((data) => { $('csrf_token').value = data.token || ''; })
+            .catch(() => { /* left blank; server will reject and the catch below handles it */ });
+    }
+
+    // Maps a server-side field key to the matching client-side rule id.
+    const SERVER_FIELD_TO_RULE = {
+        fullname: 'fullname',
+        email: 'reg-email',
+        mobile: 'mobile',
+        password: 'reg-password',
+        confirm_password: 'confirm-password',
+        course: 'course',
+        year: 'year',
+        gender: 'gender-group',
+        terms: 'terms'
+    };
+
+    // ---------- 7. Submit handling: validate locally, then send to PHP (Practical 7) ----------
     function setStatus(message, type) {
         status.hidden = false;
         status.textContent = message;
         status.className = 'form-status form-status-' + type;
+    }
+
+    function resetFormAfterSuccess() {
+        form.reset();
+        submitted = false;
+        touched.clear();
+        rules.forEach((rule) => showResult(rule, '', false));
+        form.querySelectorAll('.is-valid').forEach((el) => el.classList.remove('is-valid'));
+        updateStrengthMeter('');
+        drawCaptcha();
+        fetchCsrfToken();
     }
 
     form.addEventListener('submit', (event) => {
@@ -254,19 +287,49 @@
             firstFocusable(invalid[0]).focus();
             return;
         }
-        setStatus('Registration successful. All details passed validation. (Demo only: nothing is stored or sent.)', 'success');
-        const login = document.createElement('a');
-        login.href = 'index.html';
-        login.textContent = ' Go to Login →';
-        status.appendChild(login);
-        form.reset();
-        submitted = false;
-        touched.clear();
-        rules.forEach((rule) => showResult(rule, '', false));
-        form.querySelectorAll('.is-valid').forEach((el) => el.classList.remove('is-valid'));
-        updateStrengthMeter('');
-        drawCaptcha();
-        status.focus();
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        const originalLabel = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                if (data.success) {
+                    setStatus(data.message || 'Registration successful.', 'success');
+                    const login = document.createElement('a');
+                    login.href = 'index.html';
+                    login.textContent = ' Go to Login →';
+                    status.appendChild(login);
+                    resetFormAfterSuccess();
+                    status.focus();
+                    return;
+                }
+
+                const serverErrors = data.errors || {};
+                Object.keys(serverErrors).forEach((key) => {
+                    const rule = rules.find((r) => r.id === SERVER_FIELD_TO_RULE[key]);
+                    if (rule) showResult(rule, serverErrors[key], true);
+                });
+                setStatus(data.message || 'Please fix the errors below and try again.', 'error');
+                if ('captcha' in serverErrors) {
+                    drawCaptcha();
+                    $('captcha-input').value = '';
+                }
+                status.focus();
+            })
+            .catch(() => {
+                setStatus('Could not reach the server. Please check your connection and try again.', 'error');
+                status.focus();
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = originalLabel;
+            });
     });
 
     if ($('captcha-refresh')) {
@@ -277,5 +340,6 @@
         });
     }
 
+    fetchCsrfToken();
     drawCaptcha();
 })();
