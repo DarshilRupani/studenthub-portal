@@ -60,4 +60,3 @@ try:
 finally:p.unlink(missing_ok=True)
 Path('docs/Practical10-test-results.json').write_text(json.dumps(results,indent=2)+'\n')
 print(json.dumps(results,indent=2))
-
