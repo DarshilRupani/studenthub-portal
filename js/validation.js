@@ -26,7 +26,7 @@
 
     function passwordChecks(value) {
         return [
-            { ok: value.length >= 8, missing: 'at least 8 characters' },
+            { ok: value.length >= 8 && value.length <= 72 && /^[\x20-\x7E]*$/.test(value), missing: '8-72 printable ASCII characters' },
             { ok: PATTERNS.upper.test(value), missing: 'an uppercase letter' },
             { ok: PATTERNS.lower.test(value), missing: 'a lowercase letter' },
             { ok: PATTERNS.digit.test(value), missing: 'a number' },
@@ -51,7 +51,6 @@
 
     // ---------- 3. CAPTCHA drawn on a canvas (advanced extension) ----------
     const captchaCanvas = $('captcha-canvas');
-    const CAPTCHA_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // no look-alike characters
     let captchaCode = '';
 
     function randomInt(max) {
@@ -60,13 +59,13 @@
         return buffer[0] % max;
     }
 
-    function drawCaptcha() {
+    function drawCaptcha(code) {
         if (!captchaCanvas || !captchaCanvas.getContext) return;
         const ctx = captchaCanvas.getContext('2d');
         const width = captchaCanvas.width;
         const height = captchaCanvas.height;
-        captchaCode = '';
-        for (let i = 0; i < 5; i++) captchaCode += CAPTCHA_CHARS[randomInt(CAPTCHA_CHARS.length)];
+        if (!code) return;
+        captchaCode = code;
 
         ctx.fillStyle = '#eef2ff';
         ctx.fillRect(0, 0, width, height);
@@ -114,7 +113,7 @@
             validate: (v) => {
                 v = v.trim();
                 if (!v) return 'Please enter your email address.';
-                if (!PATTERNS.email.test(v)) return 'Enter a valid email address, for example name@college.edu.';
+                if (v.length > 150 || !PATTERNS.email.test(v)) return 'Enter a valid email address, for example name@college.edu.';
                 return '';
             }
         },
@@ -145,8 +144,8 @@
                 return '';
             }
         },
-        { id: 'course', error: 'course-error', validate: (v) => (v ? '' : 'Please select your course.') },
-        { id: 'year', error: 'year-error', validate: (v) => (v ? '' : 'Please select your year.') },
+        { id: 'course', error: 'course-error', validate: (v) => (['btech-ce', 'btech-it', 'bca', 'mca', 'other'].includes(v) ? '' : 'Please select your course.') },
+        { id: 'year', error: 'year-error', validate: (v) => (['1', '2', '3', '4'].includes(v) ? '' : 'Please select your year.') },
         {
             id: 'gender-group', error: 'gender-error', group: true,
             validate: () => (form.querySelector('input[name="gender"]:checked') ? '' : 'Please select your gender.')
@@ -165,6 +164,8 @@
             validate: () => ($('terms').checked ? '' : 'You must accept the terms and conditions to register.')
         }
     ];
+
+    rules.push({ id: 'role', error: 'role-error', validate: (v) => ['student', 'faculty'].includes(v) ? '' : 'Select a valid role.' });
 
     const touched = new Set();
 
@@ -238,7 +239,7 @@
     function fetchCsrfToken() {
         fetch('php/get-csrf-token.php')
             .then((response) => response.json())
-            .then((data) => { $('csrf_token').value = data.token || ''; })
+            .then((data) => { $('csrf_token').value = data.token || ''; drawCaptcha(data.captcha); })
             .catch(() => { /* left blank; server will reject and the catch below handles it */ });
     }
 
@@ -252,6 +253,8 @@
         course: 'course',
         year: 'year',
         gender: 'gender-group',
+        captcha: 'captcha-input',
+        role: 'role',
         terms: 'terms'
     };
 
@@ -269,7 +272,6 @@
         rules.forEach((rule) => showResult(rule, '', false));
         form.querySelectorAll('.is-valid').forEach((el) => el.classList.remove('is-valid'));
         updateStrengthMeter('');
-        drawCaptcha();
         fetchCsrfToken();
     }
 
@@ -281,7 +283,7 @@
             const count = invalid.length;
             setStatus('Please fix ' + count + (count === 1 ? ' error' : ' errors') + ' below and try again.', 'error');
             if (invalid.some((rule) => rule.id === 'captcha-input') && $('captcha-input').value) {
-                drawCaptcha();
+                fetchCsrfToken();
                 $('captcha-input').value = '';
             }
             firstFocusable(invalid[0]).focus();
@@ -317,7 +319,7 @@
                 });
                 setStatus(data.message || 'Please fix the errors below and try again.', 'error');
                 if ('captcha' in serverErrors) {
-                    drawCaptcha();
+                    fetchCsrfToken();
                     $('captcha-input').value = '';
                 }
                 status.focus();
@@ -334,12 +336,11 @@
 
     if ($('captcha-refresh')) {
         $('captcha-refresh').addEventListener('click', () => {
-            drawCaptcha();
+            fetchCsrfToken();
             $('captcha-input').value = '';
             $('captcha-input').focus();
         });
     }
 
     fetchCsrfToken();
-    drawCaptcha();
 })();

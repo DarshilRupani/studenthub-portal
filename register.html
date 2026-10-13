@@ -122,7 +122,7 @@
                 <div class="form-group">
                     <label for="reg-email">Email Address</label>
                     <input type="email" id="reg-email" name="email" placeholder="you@example.com"
-                           autocomplete="email" required aria-describedby="email-error">
+                           autocomplete="email" maxlength="150" required aria-describedby="email-error">
                     <p class="error-message" id="email-error"></p>
                 </div>
 
@@ -138,9 +138,9 @@
                 <div class="form-group">
                     <label for="reg-password">Password</label>
                     <input type="password" id="reg-password" name="password" placeholder="Create a password"
-                           autocomplete="new-password" required
+                           autocomplete="new-password" maxlength="72" required
                            aria-describedby="password-hint strength-text password-error">
-                    <p class="field-hint" id="password-hint">At least 8 characters with an uppercase letter, a lowercase letter, a number and a symbol.</p>
+                    <p class="field-hint" id="password-hint">8-72 printable ASCII characters with an uppercase letter, a lowercase letter, a number and a symbol.</p>
                     <div class="strength-meter" aria-hidden="true"><span id="strength-bar" data-level="0"></span></div>
                     <p class="strength-text" id="strength-text" aria-live="polite"></p>
                     <p class="error-message" id="password-error"></p>
@@ -149,7 +149,7 @@
                 <div class="form-group">
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm_password" placeholder="Re-enter your password"
-                           autocomplete="new-password" required aria-describedby="confirm-error">
+                           autocomplete="new-password" maxlength="72" required aria-describedby="confirm-error">
                     <p class="error-message" id="confirm-error"></p>
                 </div>
 
@@ -190,10 +190,11 @@
 
                 <div class="form-group">
                     <label for="role">I am a</label>
-                    <select id="role" name="role">
+                    <select id="role" name="role" aria-describedby="role-error">
                         <option value="student">Student</option>
                         <option value="faculty">Faculty</option>
                     </select>
+                    <p class="error-message" id="role-error"></p>
                 </div>
 
                 <div class="form-group captcha-group">

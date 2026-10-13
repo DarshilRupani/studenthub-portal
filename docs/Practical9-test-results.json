@@ -1,0 +1,142 @@
+{
+  "email": "practical9.1791913582@example.com",
+  "tests": [
+    {
+      "case": "Valid registration",
+      "status": 201,
+      "result": {
+        "success": true,
+        "message": "Welcome, Practical Test! Your StudentHub account has been created.",
+        "errors": []
+      }
+    },
+    {
+      "case": "Duplicate email",
+      "status": 409,
+      "result": {
+        "success": false,
+        "message": "This email is already registered.",
+        "errors": {
+          "email": "This email is already registered."
+        }
+      }
+    },
+    {
+      "case": "Duplicate email with changed case",
+      "status": 409,
+      "result": {
+        "success": false,
+        "message": "This email is already registered.",
+        "errors": {
+          "email": "This email is already registered."
+        }
+      }
+    },
+    {
+      "case": "Invalid email",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "email": "Enter a valid email address."
+        }
+      }
+    },
+    {
+      "case": "Weak password",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "password": "Password needs 8-72 printable ASCII characters, an uppercase letter, a lowercase letter, a number and a symbol."
+        }
+      }
+    },
+    {
+      "case": "Password mismatch",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "confirm_password": "Passwords do not match."
+        }
+      }
+    },
+    {
+      "case": "Invalid year",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "year": "Select a valid year."
+        }
+      }
+    },
+    {
+      "case": "Invalid course",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "course": "Select a valid course."
+        }
+      }
+    },
+    {
+      "case": "Invalid role",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "role": "Select a valid role."
+        }
+      }
+    },
+    {
+      "case": "Missing terms",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "terms": "You must accept the terms and conditions."
+        }
+      }
+    },
+    {
+      "case": "Invalid CAPTCHA",
+      "status": 422,
+      "result": {
+        "success": false,
+        "message": "Please fix the errors below and try again.",
+        "errors": {
+          "captcha": "The security code does not match. Reload the code and try again."
+        }
+      }
+    },
+    {
+      "case": "Invalid CSRF token",
+      "status": 403,
+      "result": {
+        "success": false,
+        "message": "Your session expired. Please reload the page and try again.",
+        "errors": []
+      }
+    }
+  ],
+  "database_verification": {
+    "user_id": 1,
+    "fullname": "Practical Test",
+    "email": "practical9.1791913582@example.com",
+    "audit_entries": 1,
+    "hash_stored": true,
+    "password_verify": true,
+    "wrong_password_rejected": true
+  }
+}
