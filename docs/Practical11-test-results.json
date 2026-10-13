@@ -1,0 +1,132 @@
+[
+  {
+    "case": "Anonymous access blocked",
+    "result": "PASS",
+    "observed": "Redirect to login"
+  },
+  {
+    "case": "Student role blocked",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Admin list and pagination",
+    "result": "PASS",
+    "observed": "Admin list displays ten rows and next-page link"
+  },
+  {
+    "case": "INSERT add student",
+    "result": "PASS",
+    "observed": "Student added successfully"
+  },
+  {
+    "case": "SELECT search by email",
+    "result": "PASS",
+    "observed": "Added record found by email"
+  },
+  {
+    "case": "Duplicate email rejected",
+    "result": "PASS",
+    "observed": "HTTP 409 duplicate email message"
+  },
+  {
+    "case": "Invalid data rejected",
+    "result": "PASS",
+    "observed": "HTTP 422 validation errors"
+  },
+  {
+    "case": "CSRF rejected",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "UPDATE edit student",
+    "result": "PASS",
+    "observed": "Student updated successfully"
+  },
+  {
+    "case": "Search by name",
+    "result": "PASS",
+    "observed": "Edited record found by name"
+  },
+  {
+    "case": "Course search and course/year filters",
+    "result": "PASS",
+    "observed": "Only B.Tech IT year 3 records returned"
+  },
+  {
+    "case": "Search displayed course name",
+    "result": "PASS",
+    "observed": "B.Tech IT search matches its course code"
+  },
+  {
+    "case": "CSV export includes all pages",
+    "result": "PASS",
+    "observed": "CSV contains all matching records and seven columns"
+  },
+  {
+    "case": "Pagination page two",
+    "result": "PASS",
+    "observed": "Second page opened"
+  },
+  {
+    "case": "Empty search result",
+    "result": "PASS",
+    "observed": "Clear no-results message"
+  },
+  {
+    "case": "SQL injection treated as text",
+    "result": "PASS",
+    "observed": "No rows returned for SQL text"
+  },
+  {
+    "case": "Literal wildcard search",
+    "result": "PASS",
+    "observed": "Percent sign treated literally"
+  },
+  {
+    "case": "Delete confirmation page",
+    "result": "PASS",
+    "observed": "Confirmation shown before changing data"
+  },
+  {
+    "case": "Unconfirmed delete rejected",
+    "result": "PASS",
+    "observed": "Confirmation required"
+  },
+  {
+    "case": "Soft delete",
+    "result": "PASS",
+    "observed": "Status changed to deleted"
+  },
+  {
+    "case": "Deleted record hidden",
+    "result": "PASS",
+    "observed": "Record absent from active list"
+  },
+  {
+    "case": "Deleted record retained",
+    "result": "PASS",
+    "observed": "Deleted record still exists in CSV"
+  },
+  {
+    "case": "Restore deleted student",
+    "result": "PASS",
+    "observed": "Student restored"
+  },
+  {
+    "case": "Restored student visible",
+    "result": "PASS",
+    "observed": "Record appears in active list"
+  },
+  {
+    "case": "Missing record handled",
+    "result": "PASS",
+    "observed": "Student not found message"
+  },
+  {
+    "case": "Test-record cleanup by soft delete",
+    "result": "PASS",
+    "observed": "Only the fictional test record is hidden"
+  }
+]

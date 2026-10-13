@@ -37,18 +37,23 @@ HTML, CSS, JavaScript, PHP, MySQLi, MariaDB, XAMPP, GitHub
 ```
 studenthub-portal/
 ├── output/
-│   └── pdf/                 # Practical reports 1-10
+│   ├── pdf/                 # Practical reports 1-11
+│   └── csv/                 # Student list exports
 ├── docs/                    # Supporting documents and screenshots
 │   ├── sitemap/
 │   ├── wireframes/
 │   ├── responsive-screenshots/
 │   ├── practical9-screenshots/
-│   └── practical10-screenshots/
+│   ├── practical10-screenshots/
+│   └── practical11-screenshots/
 ├── scripts/
 │   ├── build-practical9-report.py
 │   ├── build-practical10-report.py
 │   ├── seed-practical10.php
-│   └── test-practical10.py
+│   ├── test-practical10.py
+│   ├── build-practical11-report.py
+│   ├── test-practical11.py
+│   └── export-practical11.php
 ├── sql/
 ├── php/
 ├── css/
@@ -63,3 +68,5 @@ wireframes and setup notes remain in `docs/`. Temporary report-generation files
 have been removed; the reusable report builders are kept in `scripts/`.
 
 Practical 10 login and session setup: [docs/Practical10-setup.md](docs/Practical10-setup.md).
+
+Practical 11 student management setup: [docs/Practical11-setup.md](docs/Practical11-setup.md).

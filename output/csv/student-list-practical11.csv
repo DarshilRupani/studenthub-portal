@@ -1,0 +1,26 @@
+"Student ID","Full Name",Email,Mobile,Course,Year,Status
+1,"Darshil Rupani",darshil@example.com,,btech-ce,3,active
+2,"Aarav Shah",aarav@example.com,,btech-it,2,active
+3,"Meera Patel",meera@example.com,,bca,1,active
+4,"Riya Desai",riya@example.com,,btech-ce,2,active
+5,"Dev Joshi",dev@example.com,,mca,1,active
+6,"Aditi Shah",aditi.lab11@example.com,9876543201,bca,1,active
+7,"Aryan Patel",aryan.lab11@example.com,9876543202,btech-ce,2,active
+8,"Bhavya Mehta",bhavya.lab11@example.com,9876543203,btech-it,3,active
+9,"Chirag Desai",chirag.lab11@example.com,9876543204,mca,1,active
+10,"Diya Joshi",diya.lab11@example.com,9876543205,bca,2,active
+11,"Esha Trivedi",esha.lab11@example.com,9876543206,btech-ce,4,active
+12,"Harsh Shah",harsh.lab11@example.com,9876543207,btech-it,1,active
+13,"Isha Patel",isha.lab11@example.com,9876543208,mca,2,active
+14,"Jay Mehta",jay.lab11@example.com,9876543209,bca,3,active
+15,"Kavya Desai",kavya.lab11@example.com,9876543210,btech-ce,1,active
+16,"Krish Joshi",krish.lab11@example.com,9876543211,btech-it,2,active
+17,"Manav Trivedi",manav.lab11@example.com,9876543212,mca,1,active
+18,"Neha Shah",neha.lab11@example.com,9876543213,bca,4,active
+19,"Om Patel",om.lab11@example.com,9876543214,btech-ce,3,active
+20,"Pari Mehta",pari.lab11@example.com,9876543215,btech-it,4,active
+21,"Rohan Desai",rohan.lab11@example.com,9876543216,mca,2,active
+22,"Sana Joshi",sana.lab11@example.com,9876543217,bca,1,active
+23,"Tanvi Trivedi",tanvi.lab11@example.com,9876543218,btech-ce,2,active
+24,"Vihaan Shah",vihaan.lab11@example.com,9876543219,btech-it,3,active
+25,"Yash Patel",yash.lab11@example.com,9876543220,other,4,active
