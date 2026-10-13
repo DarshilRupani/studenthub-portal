@@ -37,7 +37,7 @@ HTML, CSS, JavaScript, PHP, MySQLi, MariaDB, XAMPP, GitHub
 ```
 studenthub-portal/
 ├── output/
-│   ├── pdf/                 # Practical reports 1-11
+│   ├── pdf/                 # Practical reports 1-12
 │   └── csv/                 # Student list exports
 ├── docs/                    # Supporting documents and screenshots
 │   ├── sitemap/
@@ -45,7 +45,8 @@ studenthub-portal/
 │   ├── responsive-screenshots/
 │   ├── practical9-screenshots/
 │   ├── practical10-screenshots/
-│   └── practical11-screenshots/
+│   ├── practical11-screenshots/
+│   └── practical12-screenshots/
 ├── scripts/
 │   ├── build-practical9-report.py
 │   ├── build-practical10-report.py
@@ -53,7 +54,11 @@ studenthub-portal/
 │   ├── test-practical10.py
 │   ├── build-practical11-report.py
 │   ├── test-practical11.py
-│   └── export-practical11.php
+│   ├── export-practical11.php
+│   ├── build-practical12-report.py
+│   ├── setup-practical12.php
+│   ├── test-practical12.py
+│   └── export-practical12.php
 ├── sql/
 ├── php/
 ├── css/
@@ -70,3 +75,5 @@ have been removed; the reusable report builders are kept in `scripts/`.
 Practical 10 login and session setup: [docs/Practical10-setup.md](docs/Practical10-setup.md).
 
 Practical 11 student management setup: [docs/Practical11-setup.md](docs/Practical11-setup.md).
+
+Practical 12 event management setup: [docs/Practical12-setup.md](docs/Practical12-setup.md).

@@ -39,9 +39,10 @@ export function renderEventCards(container, events, offset) {
           </div>
           <div class="event-content">
             <span class="event-type">${escapeHtml(event.category.toUpperCase())}</span>
+            ${event.poster && /^event-poster\.php\?id=[0-9]+$/.test(event.poster) ? `<img class="public-event-poster" src="${escapeHtml(event.poster)}" alt="Poster for ${escapeHtml(event.title)}">` : ''}
             <h3>${escapeHtml(event.title)}</h3>
             <p>${escapeHtml(event.description)}</p>
-            <div class="event-meta"><span>📍 ${escapeHtml(event.location)}</span></div>
+            <div class="event-meta"><span>📍 ${escapeHtml(event.location)}</span><span>${escapeHtml(event.status || "open")}</span></div>
           </div>
           <div class="event-number">${String(offset + index + 1).padStart(2, "0")}</div>
         </article>`;

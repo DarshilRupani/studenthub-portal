@@ -4084,4 +4084,5 @@ html[data-theme="dark"] .form-status-success { background: #14311f; color: #bbf7
 html[data-theme="dark"] .data-notice { color: #fbbf24; }
 html[data-theme="dark"] .events-message.error { border-color: #f87171; color: #fca5a5; }
 html[data-theme="dark"] .control-group input:focus,
-html[data-theme="dark"] .control-group select:focus { border-color: #c4b5fd; }  
+html[data-theme="dark"] .control-group select:focus { border-color: #c4b5fd; }
+.public-event-poster { max-width: 160px; max-height: 220px; object-fit: contain; margin-bottom: 12px; }

@@ -1,0 +1,12 @@
+main.container { max-width: 1200px; }
+main.container h2 { font-size: 32px; }
+main.container h3 { font-size: 21px; margin-bottom: 18px; }
+main.container h4 { font-size: 19px; }
+.card { border-radius: 10px; }
+.btn-primary { background: #5145cd; border-color: #5145cd; }
+.poster-preview { display: block; max-width: 150px; max-height: 180px; object-fit: contain; }
+.poster-placeholder { display: block; width: 100px; padding: 25px 8px; background: #eee; text-align: center; }
+.event-admin-row { display: flex; gap: 24px; border-top: 1px solid #ddd; padding: 18px 0; }
+.event-admin-details { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.event-admin-details p { margin-bottom: 8px; }
+@media(max-width: 600px) { .event-admin-row { flex-direction: column; } }

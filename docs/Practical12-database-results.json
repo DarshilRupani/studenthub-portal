@@ -1,0 +1,18 @@
+{
+    "event_records": 6,
+    "events_with_posters": 1,
+    "audit_actions": [
+        {
+            "action": "added",
+            "total": "5"
+        },
+        {
+            "action": "updated",
+            "total": "7"
+        },
+        {
+            "action": "deleted",
+            "total": "4"
+        }
+    ]
+}

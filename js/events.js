@@ -2,13 +2,14 @@ import { fetchJson } from "./modules/api.js";
 import { filterItems, sortItems, paginate } from "./modules/list-utils.js";
 import { renderEventCards, renderPagination, showMessage, fillSelect } from "./modules/render.js";
 
-const EVENTS_URL = "data/events.json";
-const CACHE_KEY = "studenthub-events-cache";
+const EVENTS_URL = "php/get-events.php";
+const CACHE_KEY = "studenthub-db-events-cache";
 const PAGE_SIZE = 6;
 
 const container = document.getElementById("events-container");
 const searchInput = document.getElementById("event-search");
 const categorySelect = document.getElementById("event-category");
+const statusSelect = document.getElementById("event-status");
 const sortSelect = document.getElementById("event-sort");
 const countText = document.getElementById("events-count");
 const notice = document.getElementById("data-notice");
@@ -38,7 +39,7 @@ async function init() {
 
 function update() {
   const filtered = filterItems(
-    allEvents,
+    allEvents.filter((event) => statusSelect.value === "all" || event.status === statusSelect.value),
     searchInput.value,
     ["title", "location", "description"],
     "category",
@@ -66,3 +67,4 @@ categorySelect.addEventListener("change", () => { currentPage = 1; update(); });
 sortSelect.addEventListener("change", () => { currentPage = 1; update(); });
 
 init();
+statusSelect.addEventListener("change", () => { currentPage = 1; update(); });

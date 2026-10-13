@@ -1,0 +1,182 @@
+[
+  {
+    "case": "Anonymous access blocked",
+    "result": "PASS",
+    "observed": "Redirect to login"
+  },
+  {
+    "case": "Student role blocked",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Admin access and sample events",
+    "result": "PASS",
+    "observed": "Sample database events displayed"
+  },
+  {
+    "case": "Add event with PNG poster",
+    "result": "PASS",
+    "observed": "Event and poster saved"
+  },
+  {
+    "case": "Random image renaming",
+    "result": "PASS",
+    "observed": "Original name replaced by random hexadecimal filename"
+  },
+  {
+    "case": "Poster endpoint serves image",
+    "result": "PASS",
+    "observed": "Validated PNG returned with image content type"
+  },
+  {
+    "case": "Poster response nosniff",
+    "result": "PASS",
+    "observed": "nosniff header present"
+  },
+  {
+    "case": "Direct image access blocked",
+    "result": "PASS",
+    "observed": "HTTP 403 from protected directory"
+  },
+  {
+    "case": "Upload directory browsing blocked",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Optional poster accepted",
+    "result": "PASS",
+    "observed": "Event added without poster"
+  },
+  {
+    "case": "Spoofed image MIME rejected",
+    "result": "PASS",
+    "observed": "Text disguised as PNG rejected"
+  },
+  {
+    "case": "Text file rejected",
+    "result": "PASS",
+    "observed": "Unsupported file type rejected"
+  },
+  {
+    "case": "Executable upload rejected",
+    "result": "PASS",
+    "observed": "PHP file rejected"
+  },
+  {
+    "case": "SVG upload rejected",
+    "result": "PASS",
+    "observed": "SVG not permitted"
+  },
+  {
+    "case": "Extension mismatch rejected",
+    "result": "PASS",
+    "observed": "PNG bytes with JPEG extension rejected"
+  },
+  {
+    "case": "Oversized poster rejected",
+    "result": "PASS",
+    "observed": "More than 2 MB rejected"
+  },
+  {
+    "case": "Oversized dimensions rejected",
+    "result": "PASS",
+    "observed": "5000-pixel image rejected"
+  },
+  {
+    "case": "Invalid event fields rejected",
+    "result": "PASS",
+    "observed": "Date and category errors shown"
+  },
+  {
+    "case": "CSRF rejected",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Update event and status",
+    "result": "PASS",
+    "observed": "Title, category and status updated"
+  },
+  {
+    "case": "Empty upload retains poster",
+    "result": "PASS",
+    "observed": "Existing PNG retained"
+  },
+  {
+    "case": "JPEG replacement accepted",
+    "result": "PASS",
+    "observed": "JPEG poster saved"
+  },
+  {
+    "case": "Old poster removed after replacement",
+    "result": "PASS",
+    "observed": "Previous PNG cleaned up"
+  },
+  {
+    "case": "WebP replacement accepted",
+    "result": "PASS",
+    "observed": "WebP poster saved"
+  },
+  {
+    "case": "Category and closed filter",
+    "result": "PASS",
+    "observed": "Combined filters return the updated event"
+  },
+  {
+    "case": "Open filter excludes closed event",
+    "result": "PASS",
+    "observed": "Closed test event excluded from open filter"
+  },
+  {
+    "case": "Campus list uses database",
+    "result": "PASS",
+    "observed": "Updated event available in public event feed"
+  },
+  {
+    "case": "Empty search result",
+    "result": "PASS",
+    "observed": "No-results message shown"
+  },
+  {
+    "case": "Delete confirmation screen",
+    "result": "PASS",
+    "observed": "Confirmation shown without deletion"
+  },
+  {
+    "case": "Unconfirmed delete rejected",
+    "result": "PASS",
+    "observed": "Confirmation required"
+  },
+  {
+    "case": "Registered event protected",
+    "result": "PASS",
+    "observed": "Referenced event retained; closing suggested"
+  },
+  {
+    "case": "Delete event",
+    "result": "PASS",
+    "observed": "Unregistered test event deleted"
+  },
+  {
+    "case": "Poster removed on deletion",
+    "result": "PASS",
+    "observed": "Deleted event poster cleaned up"
+  },
+  {
+    "case": "Deleted poster endpoint blocked",
+    "result": "PASS",
+    "observed": "HTTP 404"
+  },
+  {
+    "case": "Delete audit remains visible",
+    "result": "PASS",
+    "observed": "Audit retains deleted event title"
+  },
+  {
+    "case": "Temporary no-poster event removed",
+    "result": "PASS",
+    "observed": "Only generated test event removed"
+  }
+]
