@@ -1,7 +1,7 @@
 <?php
 // Practical 9: MySQLi registration with password hashing and audit logging.
 ini_set('display_errors', '0');
-session_start();
+require __DIR__ . '/auth.php';
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 

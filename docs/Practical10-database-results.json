@@ -1,0 +1,18 @@
+{
+    "last_login": [
+        {
+            "role": "student",
+            "last_login": "2026-10-14 00:24:14"
+        },
+        {
+            "role": "faculty",
+            "last_login": "2026-10-14 00:22:54"
+        },
+        {
+            "role": "admin",
+            "last_login": "2026-10-14 00:24:12"
+        }
+    ],
+    "token_hash_format": "SHA-256: 64 hexadecimal characters",
+    "plaintext_tokens_stored": false
+}

@@ -1,3 +1,5 @@
 /php/db-config.php
 /php/storage/
-/tmp/practical9/
+/tmp/
+
+/php/auth-config.local.php

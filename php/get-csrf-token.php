@@ -1,5 +1,5 @@
 <?php
-session_start();
+require __DIR__ . '/auth.php';
 header('Content-Type: application/json');
 header('Cache-Control: no-store');
 $_SESSION['csrf_token'] = bin2hex(random_bytes(32));

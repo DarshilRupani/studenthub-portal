@@ -1,0 +1,127 @@
+[
+  {
+    "case": "Anonymous dashboard blocked",
+    "result": "PASS",
+    "observed": "303: login.php?message=unauthorized"
+  },
+  {
+    "case": "Failed login",
+    "result": "PASS",
+    "observed": "Invalid email or password displayed"
+  },
+  {
+    "case": "Student login and redirect",
+    "result": "PASS",
+    "observed": "303: dashboard.php"
+  },
+  {
+    "case": "Session ID regenerated",
+    "result": "PASS",
+    "observed": "Session ID changed after login"
+  },
+  {
+    "case": "HttpOnly and SameSite session cookie",
+    "result": "PASS",
+    "observed": "Cookie flags present"
+  },
+  {
+    "case": "Student dashboard",
+    "result": "PASS",
+    "observed": "Student dashboard opened"
+  },
+  {
+    "case": "Student cannot access admin",
+    "result": "PASS",
+    "observed": "HTTP 403 Access denied"
+  },
+  {
+    "case": "GET logout blocked",
+    "result": "PASS",
+    "observed": "HTTP 405"
+  },
+  {
+    "case": "Logout CSRF",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Logout",
+    "result": "PASS",
+    "observed": "Logout redirect and cookie cleared"
+  },
+  {
+    "case": "Dashboard blocked after logout",
+    "result": "PASS",
+    "observed": "Redirect to login"
+  },
+  {
+    "case": "Admin redirect",
+    "result": "PASS",
+    "observed": "admin-dashboard.php"
+  },
+  {
+    "case": "Admin dashboard",
+    "result": "PASS",
+    "observed": "Correct dashboard opened"
+  },
+  {
+    "case": "Admin cannot access student dashboard",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Faculty redirect",
+    "result": "PASS",
+    "observed": "faculty-dashboard.php"
+  },
+  {
+    "case": "Faculty dashboard",
+    "result": "PASS",
+    "observed": "Correct dashboard opened"
+  },
+  {
+    "case": "Faculty cannot access student dashboard",
+    "result": "PASS",
+    "observed": "HTTP 403"
+  },
+  {
+    "case": "Remember cookie issued",
+    "result": "PASS",
+    "observed": "Random selector and validator cookie issued"
+  },
+  {
+    "case": "Remember-me restores login",
+    "result": "PASS",
+    "observed": "Dashboard opened with remember cookie only"
+  },
+  {
+    "case": "Remember token rotates",
+    "result": "PASS",
+    "observed": "New remember token issued"
+  },
+  {
+    "case": "Old token replay blocked",
+    "result": "PASS",
+    "observed": "Old token rejected"
+  },
+  {
+    "case": "Tampered remember token blocked",
+    "result": "PASS",
+    "observed": "Tampered token rejected"
+  },
+  {
+    "case": "Remember cookie cleared on logout",
+    "result": "PASS",
+    "observed": "Remember cookie removed"
+  },
+  {
+    "case": "Session timeout",
+    "result": "PASS",
+    "observed": "Expired session redirected to login"
+  },
+  {
+    "case": "Timeout clears remember cookie",
+    "result": "PASS",
+    "observed": "Remember cookie removed on timeout"
+  }
+]

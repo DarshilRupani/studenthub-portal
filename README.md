@@ -31,20 +31,24 @@ StudentHub is a web portal designed for college students to manage their academi
 Landing Page → Login/Register → Role-based Dashboard → Module Pages (Notice Board / Timetable / Study Materials) → Profile
 
 ## Tech Stack
-HTML, CSS, JavaScript, GitHub
+HTML, CSS, JavaScript, PHP, MySQLi, MariaDB, XAMPP, GitHub
 
 ## Folder Structure
 ```
 studenthub-portal/
 ├── output/
-│   └── pdf/                 # Practical reports 1-9
+│   └── pdf/                 # Practical reports 1-10
 ├── docs/                    # Supporting documents and screenshots
 │   ├── sitemap/
 │   ├── wireframes/
 │   ├── responsive-screenshots/
-│   └── practical9-screenshots/
+│   ├── practical9-screenshots/
+│   └── practical10-screenshots/
 ├── scripts/
-│   └── build-practical9-report.py
+│   ├── build-practical9-report.py
+│   ├── build-practical10-report.py
+│   ├── seed-practical10.php
+│   └── test-practical10.py
 ├── sql/
 ├── php/
 ├── css/
@@ -56,4 +60,6 @@ studenthub-portal/
 
 All practical PDF reports are stored in `output/pdf/`. Supporting screenshots,
 wireframes and setup notes remain in `docs/`. Temporary report-generation files
-have been removed; the reusable Practical 9 report builder is kept in `scripts/`.
+have been removed; the reusable report builders are kept in `scripts/`.
+
+Practical 10 login and session setup: [docs/Practical10-setup.md](docs/Practical10-setup.md).
