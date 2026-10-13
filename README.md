@@ -36,11 +36,24 @@ HTML, CSS, JavaScript, GitHub
 ## Folder Structure
 ```
 studenthub-portal/
-├── docs/
+├── output/
+│   └── pdf/                 # Practical reports 1-9
+├── docs/                    # Supporting documents and screenshots
 │   ├── sitemap/
-│   └── wireframes/
+│   ├── wireframes/
+│   ├── responsive-screenshots/
+│   └── practical9-screenshots/
+├── scripts/
+│   └── build-practical9-report.py
+├── sql/
+├── php/
 ├── css/
 ├── js/
 ├── images/
+├── data/
 └── README.md
 ```
+
+All practical PDF reports are stored in `output/pdf/`. Supporting screenshots,
+wireframes and setup notes remain in `docs/`. Temporary report-generation files
+have been removed; the reusable Practical 9 report builder is kept in `scripts/`.
