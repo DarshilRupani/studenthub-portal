@@ -20,4 +20,4 @@ For an Apache virtual host, point `DocumentRoot` at this project folder, grant A
 
 ## Submission
 
-The existing repository is `https://github.com/DarshilRupani/studenthub-portal`. This guide prepares the project for review; commit and push through the normal repository workflow after reviewing the final diff and keeping `php/db-config.php`, session data, uploaded posters and private credentials out of Git.
+The repository is `https://github.com/DarshilRupani/studenthub-portal`. Practicals 13–15 and their reports have been committed and pushed to `main`. Keep `php/db-config.php`, session data, uploaded posters and private credentials out of Git when making later updates.
