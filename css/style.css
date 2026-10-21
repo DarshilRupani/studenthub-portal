@@ -4086,3 +4086,7 @@ html[data-theme="dark"] .events-message.error { border-color: #f87171; color: #f
 html[data-theme="dark"] .control-group input:focus,
 html[data-theme="dark"] .control-group select:focus { border-color: #c4b5fd; }
 .public-event-poster { max-width: 160px; max-height: 220px; object-fit: contain; margin-bottom: 12px; }
+/* Practical 14: responsive statistic cards on the admin dashboard. */
+.dashboard-stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin:1.25rem 0}
+.dashboard-stat-grid .dashboard-panel{margin:0}
+.dashboard-stat-grid h3{font-size:2rem;margin:.35rem 0}

@@ -1,0 +1,42 @@
+[
+  {
+    "case": "Page home.html",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Page about.html",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Page events.html",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Page contact.html",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Page faq.html",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Page login.php",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Page register.html",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Admin API demo access control",
+    "result": "PASS",
+    "observed": "Unauthenticated request redirected to login."
+  }
+]

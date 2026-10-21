@@ -1,0 +1,42 @@
+[
+  {
+    "case": "Anonymous admin dashboard blocked",
+    "result": "PASS",
+    "observed": "HTTP 303"
+  },
+  {
+    "case": "Admin dashboard loads",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Four live statistic cards",
+    "result": "PASS",
+    "observed": "All four card labels are present."
+  },
+  {
+    "case": "Latest registrations section",
+    "result": "PASS",
+    "observed": "Section is present even when the database has no rows."
+  },
+  {
+    "case": "Audit log section",
+    "result": "PASS",
+    "observed": "Section is present even when the database has no rows."
+  },
+  {
+    "case": "Admin role menu",
+    "result": "PASS",
+    "observed": "Management and API links are present."
+  },
+  {
+    "case": "Student role dashboard and menu",
+    "result": "PENDING",
+    "observed": "Existing non-admin lab password unavailable; no password was changed."
+  },
+  {
+    "case": "Faculty role dashboard and menu",
+    "result": "PENDING",
+    "observed": "Existing non-admin lab password unavailable; no password was changed."
+  }
+]

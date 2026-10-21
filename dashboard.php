@@ -33,15 +33,11 @@ $user = requireRole('student');
     <nav id="main-navigation" aria-label="Main navigation">
         <ul>
             <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="dashboard-router.php" class="active">Dashboard</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="contact.html">Contact</a></li>
+            <li><a href="dashboard-router.php" class="active">My dashboard</a></li>
+            <li><a href="events.html">Campus events</a></li>
+            <li><a href="registrations.html">My registrations</a></li>
+            <li><a href="profile.html">My profile</a></li>
+            <li><a href="faq.html">Help</a></li>
         </ul>
     </nav>
 

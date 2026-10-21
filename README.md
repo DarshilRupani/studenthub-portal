@@ -37,7 +37,7 @@ HTML, CSS, JavaScript, PHP, MySQLi, MariaDB, XAMPP, GitHub
 ```
 studenthub-portal/
 ├── output/
-│   ├── pdf/                 # Practical reports 1-12
+│   ├── pdf/                 # Practical reports 1-15
 │   └── csv/                 # Student list exports
 ├── docs/                    # Supporting documents and screenshots
 │   ├── sitemap/
@@ -58,7 +58,12 @@ studenthub-portal/
 │   ├── build-practical12-report.py
 │   ├── setup-practical12.php
 │   ├── test-practical12.py
-│   └── export-practical12.php
+│   ├── export-practical12.php
+│   ├── test-practical13.py
+│   ├── test-practical13-input.php
+│   ├── check-practical15.py
+│   ├── test-practical14.py
+│   └── build-practical13-15-reports.py
 ├── sql/
 ├── php/
 ├── css/
@@ -77,3 +82,9 @@ Practical 10 login and session setup: [docs/Practical10-setup.md](docs/Practical
 Practical 11 student management setup: [docs/Practical11-setup.md](docs/Practical11-setup.md).
 
 Practical 12 event management setup: [docs/Practical12-setup.md](docs/Practical12-setup.md).
+
+Practical 13 JSON API setup: [docs/Practical13-setup.md](docs/Practical13-setup.md).
+
+Practical 14 dashboard and audit setup: [docs/Practical14-setup.md](docs/Practical14-setup.md). Apply `sql/practical14.sql` before using the admin activity log.
+
+Practical 15 integration and local deployment: [docs/Practical15-deployment.md](docs/Practical15-deployment.md).

@@ -2,6 +2,7 @@
 require __DIR__ . '/php/auth.php';
 $user = requireRole('admin');
 require __DIR__ . '/php/student-functions.php';
+require_once __DIR__ . '/php/admin-audit.php';
 $errors = []; $message = ''; $messageType = 'success';
 $data = ['fullname'=>'', 'email'=>'', 'mobile'=>'', 'course'=>'', 'year_of_study'=>''];
 $editId = null; $confirmation = null;
@@ -27,12 +28,18 @@ try {
                     http_response_code(422); $message='Please correct the errors below.'; $messageType='error';
                 } else {
                     $values = [$data['fullname'], $data['email'], $data['mobile'] ?: null, $data['course'], (int) $data['year_of_study']];
-                    if ($action === 'add') {
-                        studentQuery('INSERT INTO students (fullname,email,mobile,course,year_of_study) VALUES (?,?,?,?,?)', $values, 'ssssi');
-                    } else {
-                        $values[] = $id;
-                        studentQuery("UPDATE students SET fullname=?,email=?,mobile=?,course=?,year_of_study=? WHERE student_id=? AND status='active'", $values, 'ssssii');
-                    }
+                    $db=authDb(); $db->begin_transaction();
+                    try {
+                        if ($action === 'add') {
+                            studentQuery('INSERT INTO students (fullname,email,mobile,course,year_of_study) VALUES (?,?,?,?,?)', $values, 'ssssi');
+                            adminAudit('student_added','student',$db->insert_id,'Added student: '.$data['fullname']);
+                        } else {
+                            $values[] = $id;
+                            studentQuery("UPDATE students SET fullname=?,email=?,mobile=?,course=?,year_of_study=? WHERE student_id=? AND status='active'", $values, 'ssssii');
+                            adminAudit('student_updated','student',$id,'Updated student: '.$data['fullname']);
+                        }
+                        $db->commit();
+                    } catch (Throwable $e) { $db->rollback(); throw $e; }
                     header('Location: students-manage.php?message=' . ($action === 'add' ? 'added' : 'updated'), true, 303); exit;
                 }
             } elseif (in_array($action, ['delete','restore'], true) && $id) {
@@ -41,12 +48,18 @@ try {
                 } else {
                     $newStatus = $action === 'delete' ? 'deleted' : 'active';
                     $oldStatus = $action === 'delete' ? 'active' : 'deleted';
+                    $db=authDb(); $db->begin_transaction();
+                    try {
                     $statement = studentQuery('UPDATE students SET status=? WHERE student_id=? AND status=?', [$newStatus, $id, $oldStatus], 'sis');
                     if ($statement->affected_rows !== 1) {
+                        $db->rollback();
                         http_response_code(404); $message='Student not found or already changed.'; $messageType='error';
                     } else {
+                        adminAudit($action==='delete'?'student_deleted':'student_restored','student',$id,ucfirst($action).' student record #'.$id);
+                        $db->commit();
                         header('Location: students-manage.php?message=' . ($action === 'delete' ? 'deleted' : 'restored'), true, 303); exit;
                     }
+                    } catch (Throwable $e) { try {$db->rollback();} catch (Throwable $ignored) {} throw $e; }
                 }
             } else {
                 http_response_code(400); $message='Invalid student action.'; $messageType='error';

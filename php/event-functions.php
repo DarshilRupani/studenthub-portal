@@ -62,6 +62,8 @@ function eventAudit($eventId,$title,$action,$before,$after) {
     $old=$before ? json_encode($before,JSON_UNESCAPED_UNICODE) : null;
     $new=$after ? json_encode($after,JSON_UNESCAPED_UNICODE) : null;
     eventQuery('INSERT INTO event_audit (event_id,event_title,actor_user_id,action,before_data,after_data) VALUES (?,?,?,?,?,?)',[$eventId,$title,$actor,$action,$old,$new],'isisss');
+    require_once __DIR__ . '/admin-audit.php';
+    adminAudit('event_'.$action,'event',$eventId,ucfirst($action).' event: '.$title);
 }
 function eventFilters($values) {
     $category=eventText($values,'category');$status=eventText($values,'status');

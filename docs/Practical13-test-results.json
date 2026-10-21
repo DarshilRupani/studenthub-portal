@@ -1,0 +1,47 @@
+[
+  {
+    "case": "Public GET JSON",
+    "result": "PASS",
+    "observed": "HTTP 200, JSON event list returned"
+  },
+  {
+    "case": "Invalid identifier",
+    "result": "PASS",
+    "observed": "HTTP 400"
+  },
+  {
+    "case": "Anonymous mutation denied",
+    "result": "PASS",
+    "observed": "HTTP 401"
+  },
+  {
+    "case": "Admin JSON create",
+    "result": "PASS",
+    "observed": "HTTP 201"
+  },
+  {
+    "case": "GET one event",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Admin JSON update",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Admin JSON delete",
+    "result": "PASS",
+    "observed": "HTTP 200"
+  },
+  {
+    "case": "Missing event update",
+    "result": "PASS",
+    "observed": "HTTP 404"
+  },
+  {
+    "case": "Invalid fields",
+    "result": "PASS",
+    "observed": "HTTP 422"
+  }
+]
